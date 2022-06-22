@@ -1,22 +1,22 @@
 [
     {
-        "display_name": "Home",
+        "display_name": "nav.home",
         "route": "/",
         "icon": "bx bx-home"
     },
     {
-        "display_name": "Dashboard",
+        "display_name": "nav.dashboard",
         "route": "/dashboard",
         "icon": "bx bx-category-alt"
     },
     {
-        "display_name": "Seek DIDs",
+        "display_name": "nav.search",
         "route": "/seek",
         "icon": "bx bx-search-alt"
     },
     {
-        "display_name": "Customers",
-        "route": "/customers",
+        "display_name": "nav.discover",
+        "route": "/discover",
         "icon": "bx bx-user-pin"
     }
 ]

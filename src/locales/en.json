@@ -1,0 +1,69 @@
+{
+  "translation": {
+    "common": { 
+      "hello":"Hello"      
+    },
+    "theme":{
+      "theme-settings":"Theme settings",
+      "choose-mode":"Choose mode",
+      "dark":"Dark",
+      "light":"Light",
+      "choose-color":"Choose color",
+      "blue":"Blue",
+      "red":"Red",
+      "cyan":"Cyan",
+      "green":"Green",
+      "orange":"Orange"
+    },
+    "toast": {
+      "too_many_request": "Too many requests, please try later",
+      "result_not_found": "Search result not found",
+      "dismiss": "Dismiss",
+      "add-to-favorite":"Add to Favorites",
+      "unfavorite-item-tip":"😍Like it？Add to Favorites",
+      "first-add-fav-tip":"Saved accounts to local cache. Remember: seekdid does not collect your favorite accounts, so feel free!  Note:  Please backup this favorites list before you clear your browser cache!",
+      "remove-from-favorite":"Remove Favorites",
+      "remove-from-favorite-tip":"This account has been removed from the favorites list, and will no longer be displayed the next time the favorites list is loaded.If you want to favorite it again, just click the favorite icon."
+        
+    },
+    "nav": {
+      "home": "Home",
+      "dashboard": "Dashboard",
+      "search": "Seek DIDs",
+      "discover":"Discover"
+    },
+    "data": {
+      "das-big-data":".bit BIG DATA",
+      "dailystat-title":"Daily statistic, updated at:",
+      "statinfo-update-time":",updated at:",
+      "das-registered-count":"Total .bit Account",
+      "yesterday-registered-count":"Yesterday registered",
+      "das-owner-count":"Unique Owner Addresses",
+      "yesterday-owner-count":"Yesterday New Owners",
+      "max-from-a-unique-owner":"Maximum from a unique owner",
+      "total-registered-chart-title":"Total registered accounts trend",
+      "daily-registered-chart-title":"Daily New Accounts",
+      "das-owners-count-chart-title":"Unique Owner Addresses trend",
+      "daily-new-owners-count-chart-title":"Daily New Owners",
+      "account-length-distribution-title":"Account length distribution",
+      "das-limit-info":" 60% of .bit with 4~9 characters and 100% above 10 characters are open",
+      "das-limit-link":"https://docs.did.id/register-das/open-registration-rules#release-plan",
+      "das-claim-link":"https://dotbit.medium.com/claim-your-das-name-for-your-brand-ac487df02d5c",
+      "account-word-cloud-title":"Popular keywords",
+      "invites-leaderboard-title":"Invites leaderboard",
+      "rich-owner-leaderboard-title":"Rich Owner leaderboard"
+    },
+    "home": {
+     
+    },
+    "footer": {
+      
+    },
+    "search": {
+      "bulk-search":"Bulk Search",
+      "search-edit-placeholder":"Type or paste the list of .bit accounts you want to register.",
+      "search-btn":"Search",
+      "clear-btn":"Clear"
+    }
+  }
+}

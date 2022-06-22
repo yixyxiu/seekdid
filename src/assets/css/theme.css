@@ -2,7 +2,7 @@
     --main-bg: var(--main-bg-light);
     --second-bg: var(--second-bg-light);
     --txt-color: var(--txt-color-light);
-    --box-shadow: var(--box-shadow-light);
+    --box-shadow: var(--box-shadow-dark);
     --logo-full: var(--logo-full-light);
 }
 
@@ -10,7 +10,7 @@
     --main-bg: var(--main-bg-dark);
     --second-bg: var(--second-bg-dark);
     --txt-color: var(--txt-color-dark);
-    --box-shadow: var(--box-shadow-dark);
+    --box-shadow: var(--box-shadow-light);
     --logo-full: var(--logo-full-dark);
 }
 

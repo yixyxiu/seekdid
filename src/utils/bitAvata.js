@@ -1,3 +1,8 @@
+import * as spritejs from 'spritejs';   // 头像用到
+import md5 from 'blueimp-md5';
+import AVATAR_MASK from '../assets/images/avatar-mask.png';
+
+let avatarMap = new Map();
 
 export  const POSITIONS = [
     [0, 0],
@@ -92,145 +97,108 @@ export function getFigurePaths(domainMd5) {
     return _figurePathArray
 }
 
-export const DASOPENEPOCH = [
-    {
-        time: new Date(1631880000000), 
-        open_percents: 0.35,
-        parameters: 1503238553
-    },
-    {
-        //time: new Date('Mon Mar 21 2022 12:00:00 GMT+0000'), 
-        //time: new Date('2022-03-21 12:02:00 GMT'), 
-        time: new Date(1647864120000),
-        open_percents: 0.40,
-        parameters: 1717986918,
-        tips:'03-21 12:00PM(UTC+0)',
-    },
-    {
-        //time: new Date('2022-03-28 12:00:00 GMT'), 
-        time: new Date(1648468800000), 
-        open_percents: 0.45,
-        parameters: 1932735282,
-        tips:'03-28 12:00PM(UTC+0)',
-    },
-    {
-        //time: new Date('2022-04-04 12:00:00 GMT'), 
-        time: new Date(1649073600000), 
-        open_percents: 0.50,
-        parameters: 2147483647,
-        tips:'04-04 12:00PM(UTC+0)',
-    },
-    {
-        //time: new Date('2022-04-11 12:00:00 GMT'), 
-        time: new Date(1649678400000), 
-        open_percents: 0.55,
-        parameters: 2362232012,
-        tips:'04-11 12:00PM(UTC+0)',
-    },
-    {
-        //time: new Date('2022-04-18 12:00:00 GMT'), 
-        time: new Date(1650283200000), 
-        open_percents: 0.60,
-        parameters: 2576980377,
-        tips:'04-18 12:00PM(UTC+0)',
-    },
-    {
-        //time: new Date('2022-07-18 12:00:00 GMT'), 
-        time: new Date(1658145600000), 
-        open_percents: 0.60,
-        parameters: 2576980377,
-        tips:'07-18 12:00PM(UTC+0)',
-    }
-];
 
-export const TABLEFILTER = 
-{
-    "zh_CN":[
-        {
-            "name":"全部账号",
-            "key":'-1',
-            "iconClass":"fa fa-list-ul dropdown-icon-fa"
-        },
-        {
-            "name":"可注册账号",
-            "key":'0',
-            "iconClass":"fa fa-check-circle dropdown-icon-fa"
-        },
-        {
-            "name":"即将开放账号",
-            "key":'1',
-            "iconClass":"fa fa-calendar dropdown-icon-fa"
-        },
-        {
-            "name":"在售账号",
-            "key":'2',
-            "iconClass":"fa fa-usd dropdown-icon-fa"
-        },
-        {
-            "name":"未开放的账号",
-            "key":'3',
-            "iconClass":"fa fa-lock dropdown-icon-fa"
-        },
-        {
-            "name":"已注册账号",
-            "key":'4',
-            "iconClass":"fa fa-registered dropdown-icon-fa"
-        },
-        {
-            "name":"系统保留账号",
-            "key":'5',
-            "iconClass":"fa fa-certificate dropdown-icon-fa"
-        },
-        {
-            "name":"注册中的账号",
-            "key":'6',
-            "iconClass":"fa fa-exclamation-circle dropdown-icon-fa"
-        }
+export function getAvatar(id, name) {
         
-    ],
-    "en_US":[
-        {
-            "name":"All Account",
-            "key":'-1',
-            "iconClass":"fa fa-list-ul dropdown-icon-fa"
-        },
-        {
-            "name":"Available",
-            "key":'0',
-            "iconClass":"fa fa-check-circle dropdown-icon-fa"
-        },
-        {
-            "name":"Release soon",
-            "key":'1',
-            "iconClass":"fa fa-calendar dropdown-icon-fa"
-        },
-        {
-            "name":"On Sale",
-            "key":'2',
-            "iconClass":"fa fa-usd dropdown-icon-fa"
-        },
-        {
-            "name":"Not yet Open Account",
-            "key":'3',
-            "iconClass":"fa fa-lock dropdown-icon-fa"
-        },
-        {
-            "name":"Rigistered",
-            "key":'4',
-            "iconClass":"fa fa-registered dropdown-icon-fa"
-        },
-        {
-            "name":"Reserved Account",
-            "key":'5',
-            "iconClass":"fa fa-certificate dropdown-icon-fa"
-        },
-        {
-            "name":"Rigistering",
-            "key":'6',
-            "iconClass":"fa fa-exclamation-circle dropdown-icon-fa"
-        }
-    ]
-};
+    let container = document.getElementById(id)
+    if (!container) {
+        console.log('container is null');
+        return;
+    }
+    // 用缓存
+    if (avatarMap.has(name)) {
+        let child = container.lastElementChild;
+        while (child) { 
+            container.removeChild(child); 
+            child = container.lastElementChild; 
+        } 
+        
+        container.appendChild(avatarMap.get(name));
 
-export const DONATEADDRESS = 'ckb1qyqv6sge6as66xz2clgd8ffkjwgcaqv8t5asrghkn4';
-export const DASLA_CLIENTID = '36b61db1c0210f05793f2105f38e6d9cdf9617c7';
+        return;
+    }
+
+    const {Scene, Sprite, Rect, Ring, Path} = spritejs;
+    const nameMd5 = md5(name)
+    const _colors = getColors(nameMd5)
+    const _positions = getPositions(nameMd5)
+    const _figurePaths = getFigurePaths(nameMd5)
+    const _size = 60
+    const _center = 30
+
+    const scene = new Scene({
+        container,
+        width: _size,
+        height: _size,
+        displayRatio: 2,
+    })
+
+    const layer = scene.layer()
+
+    // background
+    const rect = new Rect({
+        normalize: true,
+        pos: [_center, _center],
+        size: [_size, _size],
+        fillColor: COLORS[_colors[8]]
+    })
+    layer.append(rect)
+    // figure
+    for (let i = 0; i <= 8; i++) {
+        const p = new Path()
+        const pos = _positions[nameMd5.substr(i * 3, 3)]
+        const d = FIGURE_PATHS[_figurePaths[i]]
+        const fillColor = COLORS[_colors[i + 1]]
+        p.attr({
+            pos,
+            d,
+            fillColor
+        })
+        layer.appendChild(p)
+    }
+    // logo
+    const logoSprite = new Sprite(AVATAR_MASK);
+
+    logoSprite.attr({
+        pos: [0, 0],
+        size: [_size, _size]
+    })
+    layer.appendChild(logoSprite)
+    // ring background
+    const ringBg = new Ring({
+        pos: [_center, _center],
+        innerRadius: 29,
+        outerRadius: 45,
+        fillColor: '#FFFFFF'
+    })
+    layer.append(ringBg)
+    //
+    // ring
+    const ring = new Ring({
+        pos: [_center, _center],
+        innerRadius: 29,
+        outerRadius: _center,
+        fillColor: COLORS[_colors[0]],
+        opacity: 0.2
+    })
+    layer.append(ring)
+
+    // 先用cavas画出来，然后把canvas的东西转成base64的imgdata，删除canva标签，
+    // 用这个imgdata添加一个img标签。
+    const snapshotCanvas = scene.snapshot()
+    const imgBuffer = snapshotCanvas.toDataURL('image/jpeg');
+    
+    let child = container.lastElementChild;
+    while (child) { 
+        container.removeChild(child); 
+        child = container.lastElementChild; 
+    } 
+    
+    let imgElement = document.createElement('img');
+    imgElement.src = imgBuffer;
+    //imgElement.width = imgElement.height = 32;
+    imgElement.style = 'height: 32px; width: 32px; border-radius: 32px;';
+    container.appendChild(imgElement);
+
+    avatarMap.set(name, imgElement);
+}

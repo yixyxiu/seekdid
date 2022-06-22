@@ -13,9 +13,9 @@ import Table from '../components/table/Table'
 import Badge from '../components/badge/Badge'
 
 import statusCards from '../assets/JsonData/status-card-data.json'
-import DailyRegCountChart from '../components/charts/DailyRegCountChart'
+import DailyRegCountChart from '../components/charts/DailyRegChart'
+import DailyOwnerChart from '../components/charts/DailyOwnerChart'
 
-/*let fr = require("apexcharts/dist/locales/fr.json")*/
 
 const chartOptions = {
     series: [{
@@ -31,8 +31,6 @@ const chartOptions = {
         chart: {
             background: 'transparent',
             
-        /*    locales: [fr],
-            defaultLocale: 'fr',*/
             toolbar: {
                 show: false,
                 offsetX: 0,
@@ -224,7 +222,7 @@ const Dashboard = () => {
                         />
                     </div>
                 </div>
-                <div className="col-4">
+                <div className="col-12">
                     <div className="card">
                         <div className="card__header">
                             <h3>top customers</h3>
@@ -242,7 +240,7 @@ const Dashboard = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-8">
+                <div className="col-12">
                     <div className="card">
                         <div className="card__header">
                             <h3>latest orders</h3>
@@ -260,7 +258,17 @@ const Dashboard = () => {
                         </div>
                     </div>
                 </div>
-                <DailyRegCountChart/>
+                <div className="col-12">
+                    <div className="card">
+                        <DailyRegCountChart/>
+                    </div>
+                </div>
+                <div className="col-12">
+                    <div className="card">
+                        <DailyOwnerChart/>
+                    </div>
+                </div>
+                
             </div>
         </div>
     )

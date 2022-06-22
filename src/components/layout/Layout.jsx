@@ -1,5 +1,8 @@
 import React, {useEffect} from 'react'
 
+import { changeLanguage, currentLanguage, i18n } from '../../utils/i18n'
+
+
 import './layout.css'
 
 import Sidebar from '../sidebar/Sidebar'
@@ -18,6 +21,11 @@ const Layout = () => {
 
     const dispatch = useDispatch()
 
+    const initLanguage = () => {
+        const lan = currentLanguage();
+        changeLanguage(lan);
+    }
+
     useEffect(() => {
         const themeClass = localStorage.getItem('themeMode', 'theme-mode-light')
 
@@ -26,6 +34,9 @@ const Layout = () => {
         dispatch(ThemeAction.setMode(themeClass))
 
         dispatch(ThemeAction.setColor(colorClass))
+
+        initLanguage();
+
     }, [dispatch])
 
     return (

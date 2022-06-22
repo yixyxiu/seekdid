@@ -5,8 +5,12 @@ import './topnav.css'
 import { Link } from 'react-router-dom'
 
 import Dropdown from '../dropdown/Dropdown'
+import DropdownMenu from '../dropdown/DropdownMenu'
+
 
 import ThemeMenu from '../thememenu/ThemeMenu'
+
+import LanguageMenu from '../languageMenu'
 
 import logo from '../../assets/images/logo.png'
 
@@ -81,8 +85,8 @@ const Topnav = () => {
             <div className="topnav__search">
                 <input type="text" placeholder='Search here...' />
                 <i className='bx bx-search'></i>
-            </div>
-            */}
+            </div>*/
+            }
             
             <div className="topnav__logo">
                 {/* Logo，仅当左边栏消失的情况下显示*/}
@@ -90,6 +94,10 @@ const Topnav = () => {
             </div>
             <div className="topnav__right">
                 <div className="topnav__right-item">
+                    <LanguageMenu></LanguageMenu>
+                </div>
+                <div className="topnav__right-item">
+                    
                     {/* Notification*/ }
                     {/*
                     <Dropdown
@@ -101,12 +109,16 @@ const Topnav = () => {
                     />*/
                     
                     }
-                    <Dropdown
+                    {
+                        /*
+                        <Dropdown
                         icon='bx bx-globe'
-                        /*customToggle={() => renderUserToggle(curr_user)}*/
                         contentData={coming_soon_menu}
                         renderItems={(item, index) => renderLanguageItem(item, index)}
-                    />
+                        />
+                         */
+                    }
+                    
                     {/* dropdown here */}
                 </div>
                 <div className="topnav__right-item">
@@ -121,9 +133,9 @@ const Topnav = () => {
                         renderItems={(item, index) => renderUserMenu(item, index)}
                     />
                 </div>
-                <div className="topnav__right-item">
+                <div className="topnav__right-item topnav__right-more__menu hidden md:block">
                     {/* UserInfo */}
-                    <Dropdown
+                    <DropdownMenu
                         icon='bx bx-menu'
                         /*customToggle={() => renderUserToggle(curr_user)}*/
                         contentData={sidebar_items}

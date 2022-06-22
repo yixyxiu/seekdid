@@ -1,0 +1,36 @@
+/*
+.change-lang-caption {
+    margin-top: 4px;
+  }
+  
+  .language-list-container {
+    width: 120px;
+  }
+  
+  .language-item-text {
+    margin-right: 20px;
+    margin-left: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+*/
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.menu-item:hover {
+    background-color: var(--second-bg);
+    cursor: pointer;
+    color: var(--second-color);
+}
+
+.menu-item > i {
+    margin-right: 20px;
+    font-size: 1.5rem;
+}
+
+.menu-toggle-btn {
+    font-size: 2.0rem;
+}

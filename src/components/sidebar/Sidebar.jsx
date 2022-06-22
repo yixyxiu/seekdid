@@ -7,6 +7,7 @@ import './sidebar.css'
 import logo from '../../assets/images/logo-full-light.png'
 
 import sidebar_items from '../../assets/JsonData/sidebar_routes.json'
+import { useTranslation } from 'react-i18next'
 
 const SidebarItem = props => {
 
@@ -27,9 +28,10 @@ const SidebarItem = props => {
 const Sidebar = props => {
 
     const activeItem = sidebar_items.findIndex(item => item.route === props.location.pathname)
+    const [t] = useTranslation();
 
     return (
-        <div className='sidebar'>
+        <div className='sidebar hidden md:block'>
             <div className='sidebar__wapper'>
                 <div className="sidebar__logo-wapper">
                     <div className='sidebar__logo'/>
@@ -39,7 +41,7 @@ const Sidebar = props => {
                     sidebar_items.map((item, index) => (
                         <Link to={item.route} key={index}>
                             <SidebarItem
-                                title={item.display_name}
+                                title={t(item.display_name)}
                                 icon={item.icon}
                                 active={index === activeItem}
                             />

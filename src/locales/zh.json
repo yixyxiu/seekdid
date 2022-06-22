@@ -1,0 +1,71 @@
+{
+  "translation": {
+    "common": { 
+      "hello":"你好"      
+    },
+    "theme":{
+      "theme-settings":"主题设置",
+      "choose-mode":"选择模式",
+      "dark":"暗黑主题",
+      "light":"明亮主题",
+      "choose-color":"选择颜色",
+      "blue":"蓝色",
+      "red":"红色",
+      "cyan":"青色",
+      "green":"绿色",
+      "orange":"橙色"
+    },
+    "toast": {
+      "too_many_request": "请求次数过多, 请稍后再试",
+      "result_not_found": "没有找到搜索结果",
+      "dismiss": "知道了",
+      "add-to-favorite":"添加收藏",
+      "unfavorite-item-tip":"😍喜欢这个账号吗？那就把它收藏起来吧",
+      "first-add-fav-tip":"已将账号收藏到本地缓存，seekdid 不会收集你收藏的账号，请放心使用收藏功能！注意：当你清理浏览器缓存时，请先备份此收藏列表～",
+      "remove-from-favorite":"移出收藏",
+      "remove-from-favorite-tip":"已从收藏列表中移出该账号，下次加载收藏列表将不再显示该账号。若想再次收藏它，可以点击收藏图标"
+     
+    },
+    "nav": {
+      "home": "首页",
+      "dashboard": "数据分析",
+      "search": "找靓号",
+      "discover":"逛一逛"
+    },
+    "data": {
+      "das-big-data":".bit 大数据",
+      "dailystat-title":"统计数据, 更新于:",
+      "statinfo-update-time":"，更新于：",
+      "das-registered-count":".bit全网注册账户数",
+      "yesterday-registered-count":"昨日注册账户数",
+      "das-owner-count":"独立Owner数",
+      "yesterday-owner-count":"昨日新增Owner数",
+      "max-from-a-unique-owner":"单个Owner上持有最多的是",
+      "total-registered-chart-title":".bit全网注册账户数曲线",
+      "daily-registered-chart-title":"每日新增.bit账户数",
+      "das-owners-count-chart-title":".bit独立Owner数趋势图",
+      "daily-new-owners-count-chart-title":"每日新增Owner数",
+      "account-length-distribution-title":"账号长度分布",
+      "das-limit-info":" .bit 目前只开放了4-9位的60%以及10位以上的全量",
+      "das-limit-link":"https://docs.did.id/zh/register-das/open-registration-rules#%E9%87%8A%E6%94%BE%E8%AE%A1%E5%88%92",
+      "das-claim-link":"https://dotbit.medium.com/claim-your-das-name-for-your-brand-ac487df02d5c",
+      "account-word-cloud-title":"更多的人喜欢账号里带这些词",
+      "invites-leaderboard-title":"邀请排行榜",
+      "rich-owner-leaderboard-title":".bit富豪榜"
+    },
+
+    "home": {
+     
+    },
+    "footer": {
+      
+    },
+    "search": {
+      "bulk-search":"批量查询",
+      "search-edit-placeholder":"将你想要的账号列表输入/粘贴到编辑框内，或者粘贴一篇英文文章到编辑框内，精准查询到所有账号的状态。",
+      "search-btn":"批量查询",
+      "clear-btn":"清空输入"
+    }
+
+  }
+}

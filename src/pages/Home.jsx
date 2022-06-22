@@ -1,11 +1,15 @@
 import React from 'react'
 
-import localeMgr from '../utils/localeSwitcher'
+import { useTranslation } from 'react-i18next'
+
 
 const Home = () => {
+
+    const [t] = useTranslation()
+
     return (
         <div>
-            Home {localeMgr.getLanguage()}
+            Home {t('common.hello')}
         </div>
     )
 }
