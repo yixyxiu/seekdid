@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import React, {useRef, useEffect} from 'react'
 
 import './dropdown.css'
 
@@ -16,12 +16,38 @@ const clickOutsideRef = (content_ref, toggle_ref) => {
     })
 }
 
+const clearRef = (content_ref, toggle_ref) => {
+    document.removeEventListener('mousedown', (e) => {
+        if (content_ref.current) {
+            content_ref.current.classList.remove('active')
+        }
+    })
+}
+
 const Dropdown = props => {
 
     const dropdown_toggle_el = useRef(null)
     const dropdown_content_el = useRef(null)
 
-    clickOutsideRef(dropdown_content_el, dropdown_toggle_el)
+    const mouseDownHandler = (e) => {
+        // user click toggle
+        if (dropdown_toggle_el.current && dropdown_toggle_el.current.contains(e.target)) {
+            dropdown_content_el.current.classList.toggle('active')
+        } else {
+            // user click outside toggle and content
+            if (dropdown_content_el.current && !dropdown_content_el.current.contains(e.target)) {
+                dropdown_content_el.current.classList.remove('active')
+            }
+        }
+    }
+
+    useEffect(() => {
+        clickOutsideRef(dropdown_content_el, dropdown_toggle_el);
+
+        return () => {
+            clearRef(dropdown_content_el, dropdown_toggle_el);
+        };
+    }, []);
     
     return (
         <div className='dropdown'>
