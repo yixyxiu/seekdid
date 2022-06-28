@@ -22,7 +22,7 @@ import './assets/css/theme.css'
 //import './assets/css/flex.css'
 
 import Layout from './components/layout/Layout'
-
+ 
 const store = createStore(
   rootReducer
 )
