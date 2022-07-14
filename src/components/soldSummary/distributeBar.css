@@ -1,0 +1,38 @@
+
+  
+  .distribute-bar-left {
+      margin-right:30px;
+      height: 24px;
+      background-color: #00DF9B;
+      position: relative;
+  }
+  .distribute-bar-left::after {
+      content:'';
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-bottom: 12px solid transparent;			
+      border-top: 12px solid #00DF9B;
+      border-left: 12px solid #00DF9B;
+      border-right: 12px solid transparent;
+      right: -24px;
+  }
+  
+  
+  .distribute-bar-right {
+      height: 24px;
+      background-color: #F56100;
+      position: relative;
+  }
+  .distribute-bar-right::before {
+      content:'';
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid #F56100;
+      border-left: 12px solid transparent;
+      border-right: 12px solid #F56100;
+      left: -24px;
+  }
+  

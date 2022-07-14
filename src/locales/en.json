@@ -1,7 +1,18 @@
 {
   "translation": {
     "common": { 
-      "hello":"Hello"      
+      "hello":"Hello",
+      "justnow": "just now",
+      "second_ago": "s ago",
+      "minute_ago":"min ago",
+      "minutes_ago":"mins ago",
+      "hour_ago":"hrs ago",
+      "day_ago":"day ago",
+      "second":"s",
+      "minute":"min",  
+      "hour":"hour",
+      "day":"day",
+      "week":"week"       
     },
     "theme":{
       "theme-settings":"Theme settings",
@@ -30,7 +41,47 @@
       "home": "Home",
       "dashboard": "Dashboard",
       "search": "Seek DIDs",
+      "analysis":"Analysis",
+      "leaderboard":"Leaderboard",
+      "clubs":"Clubs",
       "discover":"Discover"
+
+    },
+    "dashboard": {
+      "sold-summary-card-title":"SALES SUMMARY OF LAST 24 HRS",
+      "summary-count-card-title":"SOLD COUNT",
+      "summary-volume-card-title":"SOLD VOLUME($)",
+      "summary-address-card-title":"BUYERS vs SELLERS",
+      "summary-count-unit":" ",
+      "summary-volume-unit":"USDC",
+      "summary-address-buyers":"Buyers",
+      "summary-address-sellers":"Sellers",
+      "new-born-card-title":"NEW ACCOUNTS",
+      "new-mint-card-title":"NEW MINT",
+      "today-new":"Today: ",
+      "listing-list-card-title":"LAST LISTING",
+      "offer-list-card-title":"LAST OFFERS",
+      "sold-list-card-title":"LAST SALES"
+    },
+    "accountownersummary": {
+      "total_accounts":"accounts",
+      "hodl_rank":"rank",
+      "four_len_num":"4-len",
+      "five_len_num":"5-len",
+      "sixplus_len_num":"6+len",
+      "hodl_num":"hodl count",
+      "for_sale_num":"for sale",
+      "has_bid_num":"has bid",
+      "expired_soon_num":"expired soon",
+      "tobe_recycled_num":"to be recycled"
+    },
+    "accountlist": {
+      "renew":"Renew",
+      "expiry-at":"Expiry at:",
+      "to-be-recycled":"Expired! To be recycled soon",
+      "renew-now":"Renew NOW",
+      "make-offer":"Make Offer",
+      "buy":"BUY"
     },
     "data": {
       "das-big-data":".bit BIG DATA",

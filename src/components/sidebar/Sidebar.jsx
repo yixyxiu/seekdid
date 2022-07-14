@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 import './sidebar.css'
 
-import logo from '../../assets/images/logo-full-light.png'
+//import logo from '../../assets/images/logo-full-light.png'
 
 import sidebar_items from '../../assets/JsonData/sidebar_routes.json'
 import { useTranslation } from 'react-i18next'

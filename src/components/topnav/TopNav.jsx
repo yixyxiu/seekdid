@@ -12,7 +12,7 @@ import ThemeMenu from '../thememenu/ThemeMenu'
 
 import LanguageMenu from '../languageMenu'
 
-import logo from '../../assets/images/logo.png'
+import logo from '../../assets/images/logo-green.webp'
 
 import notifications from '../../assets/JsonData/notification.json'
 
@@ -89,8 +89,7 @@ const Topnav = () => {
             }
             
             <div className="topnav__logo">
-                {/* Logo，仅当左边栏消失的情况下显示*/}
-                <img src={logo} alt="seekdid logo" />
+                
             </div>
             <div className="topnav__right">
                 <div className="topnav__right-item">

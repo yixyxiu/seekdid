@@ -11,7 +11,7 @@
 }
 
 .badge-success {
-    background-color: var(--main-color-green);
+    background-color: var(--sd-color-green-1);
 }
 
 .badge-primary {

@@ -9,11 +9,12 @@ import AVATAR_MASK from '../../assets/images/avatar-mask.png';
 
 import REG_DAS_LOGO from '../../assets/images/ic-registrar-das.png';
 
-import SEEKDID_LOGO from '../../assets/images/logo.png'
+import SEEKDID_LOGO from '../../assets/images/logo-green.webp'
 import {FIGURE_PATHS, COLORS, getColors, getPositions, getFigurePaths} from "../../utils/bitAvata"
 
 
 import localChace from '../../utils/localCache';
+
 import { 
     AccountStatusColors, 
     DASACCOUNTSTATUS, 

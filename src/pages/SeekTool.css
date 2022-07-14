@@ -46,7 +46,7 @@ textarea.ant-input {
     -webkit-transition: all 0.3s, height 0s;
     transition: all 0.3s, height 0s;
     color: var(--txt-color);
-    background-color: var(--main-bg);
+    background-color: var(--second-bg);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     font-size:medium;

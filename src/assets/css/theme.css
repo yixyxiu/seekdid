@@ -4,6 +4,16 @@
     --txt-color: var(--txt-color-light);
     --box-shadow: var(--box-shadow-dark);
     --logo-full: var(--logo-full-light);
+    --logo-square: var(--logo-square-light);
+    --sidebar-bg: var(--sidebar-bg-light);
+    --seperator-color: var(--seperator-color-light);
+    --card-title-color:#111111;
+    --text-color-1st:#333333;
+    --text-color-2nd:#aaaaaa;
+    --list-hover-color: #F9FFFD;
+    --main-card-bg:#ffffff;
+    --sub-card-bg-1st:#FAFAFA;
+    --owner-summary-grid-bg:#FAFAFA;
 }
 
 .theme-mode-dark {
@@ -12,6 +22,21 @@
     --txt-color: var(--txt-color-dark);
     --box-shadow: var(--box-shadow-light);
     --logo-full: var(--logo-full-dark);
+    --logo-square: var(--logo-square-dark);
+    --sidebar-bg: var(--sidebar-bg-dark);
+    --seperator-color: var(--seperator-color-dark);
+    --card-title-color:#ffffff;
+    --text-color-1st:#eeeeee;
+    --text-color-2nd:#aaaaaa;
+    --list-hover-color: #292931;
+    --main-card-bg:#1A1A1F;
+    --sub-card-bg-1st:#121216;
+    --owner-summary-grid-bg:#151519;
+}
+
+.theme-color-default {
+    --main-color: var(--main-color-default-green);
+    --second-color: var(--second-color-default-green);
 }
 
 .theme-color-blue {
@@ -37,4 +62,78 @@
 .theme-color-orange {
     --main-color: var(--main-color-orange);
     --second-color: var(--second-color-orange);
+}
+
+.bg-secondary {
+    background-color: var(--second-bg);
+}
+
+.bg-main-card {
+    background-color: var(--main-card-bg);
+}
+
+.bg-sub-card-1st {
+    background-color: var(--sub-card-bg-1st);
+}
+
+.bg-box-shadow {
+    box-shadow: var(--box-shadow);
+}
+
+.seperator {
+    border-color: var(--seperator-color);
+}
+
+.text-color-1st {
+    color:var(--text-color-1st);
+}
+
+.text-color-2nd {
+    color:var(--text-color-2nd);
+}
+
+.common-bitlist:hover {
+    transform: scale(1.1);
+    background: var(--list-hover-color);
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.30);
+}
+
+.new_item_animation {
+    animation-name: new_item_breathing;
+    animation-duration: 2s;
+    animation-iteration-count: 3;
+
+    -webkit-font-smoothing: antialiased;
+     
+}
+
+@keyframes new_item_breathing {
+  0% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+    background-color:#00DF9B; 
+    opacity: 0.2;
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    background-color:var(--second-bg); 
+    opacity: 1;
+  }
+}
+
+.owner-summary-grid-bg {
+    background-color: var(--owner-summary-grid-bg);
+}
+
+.golden-text-shadow {
+    text-shadow: 1px 1px 2px hsl(0deg 0% 100% / 90%);
+}
+
+.golden-text {
+    color: rgba(0, 0, 0, 0.7);
+    text-shadow: 0px -1px 2px rgb(255 255 255 / 90%);
 }

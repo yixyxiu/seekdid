@@ -15,6 +15,21 @@
         "icon": "bx bx-search-alt"
     },
     {
+        "display_name": "nav.analysis",
+        "route": "/analysis",
+        "icon": "bx bx-search-alt"
+    },
+    {
+        "display_name": "nav.leaderboard",
+        "route": "/leaderboard",
+        "icon": "bx bx-search-alt"
+    },
+    {
+        "display_name": "nav.clubs",
+        "route": "/clubs",
+        "icon": "bx bx-search-alt"
+    },
+    {
         "display_name": "nav.discover",
         "route": "/discover",
         "icon": "bx bx-user-pin"

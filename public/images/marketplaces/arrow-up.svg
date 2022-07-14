@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="16px" viewBox="0 0 12 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Shape@1x</title>
+    <g id="seekdid" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="seekdid_数据监测_dark" transform="translate(-1040.000000, -240.000000)" fill="#00DF9B" fill-rule="nonzero">
+            <g id="body" transform="translate(400.000000, 111.000000)">
+                <g id="编组-10" transform="translate(360.000000, 62.000000)">
+                    <path d="M288.4,69 L294,74.6 L288.4,80.2 L288.4,77 C278.8,77 278,81 278,81 C278,81 278.8,72.2 288.4,72.2 L288.4,69 Z" id="Shape" transform="translate(286.000000, 75.000000) scale(-1, 1) rotate(270.000000) translate(-286.000000, -75.000000) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

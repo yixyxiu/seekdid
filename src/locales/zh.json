@@ -1,7 +1,18 @@
 {
   "translation": {
     "common": { 
-      "hello":"你好"      
+      "hello":"你好",
+      "justnow": "刚刚",
+      "second_ago": "秒前",
+      "minute_ago":"分钟前",
+      "minutes_ago":"分钟前",
+      "hour_ago":"小时前",
+      "day_ago":"天前",
+      "second":"秒",
+      "minute":"分钟",  
+      "hour":"小时",
+      "day":"天",
+      "week":"周"   
     },
     "theme":{
       "theme-settings":"主题设置",
@@ -28,9 +39,48 @@
     },
     "nav": {
       "home": "首页",
-      "dashboard": "数据分析",
+      "dashboard": "数据监测",
       "search": "找靓号",
+      "analysis":"数据分析",
+      "leaderboard":"排行榜",
+      "clubs":"圈子",
       "discover":"逛一逛"
+    },
+    "dashboard": {
+      "sold-summary-card-title":"24小时成交数据",
+      "summary-count-card-title":"成交量",
+      "summary-volume-card-title":"成交额($)",
+      "summary-address-card-title":"买卖地址对比",
+      "summary-count-unit":"个",
+      "summary-volume-unit":"USDC",
+      "summary-address-buyers":"买入地址",
+      "summary-address-sellers":"卖出地址",
+      "new-born-card-title":"新账户注册",
+      "new-mint-card-title":"新账户铸造",
+      "today-new":"今日：",
+      "listing-list-card-title":"最新上架",
+      "offer-list-card-title":"最新出价",
+      "sold-list-card-title":"最近成交"
+    },
+    "accountownersummary": {
+      "total_accounts":"账户数量",
+      "hodl_rank":"持仓排名",
+      "four_len_num":"4位账户",
+      "five_len_num":"5位账户",
+      "sixplus_len_num":"6位及以上",
+      "hodl_num":"未挂售",
+      "for_sale_num":"正在挂售",
+      "has_bid_num":"有报价",
+      "expired_soon_num":"即将到期",
+      "tobe_recycled_num":"急需赎回"
+    },
+    "accountlist": {
+      "renew":"续费",
+      "expiry-at":"到期时间：",
+      "to-be-recycled":"已到期，即将被系统回收",
+      "renew-now":"立即续费",
+      "make-offer":"出 价",
+      "buy":"购买"
     },
     "data": {
       "das-big-data":".bit 大数据",

@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -12,22 +12,31 @@
     --second-bg: #fafafb;
     --txt-color: #455560;
     --txt-white: #fff;
+    --card-title-color:#00986A;
     --main-color: #349eff;
     --second-color: #62b4ff;
-    --box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    --logo-full: url('../images/logo-full-light.png');
+    --box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 5px 0px;
+    --logo-full: url('../images/logo-full-light.webp');
+    --logo-square: url('../images/logo-square-light.svg');
+    --sidebar-bg:#00986A;
 
     --main-bg-light: #ffffff;
     --second-bg-light: #fafafb;
-    --txt-color-light: #455560;
-    --box-shadow-light: rgba(149, 157, 165, 0.2) 0px 5px 10px;
-    --logo-full-light: url('../images/logo-full-light.png');
+    --txt-color-light: #333333;
+    --box-shadow-light: rgba(0, 0, 0, 0.2) 0px 0px 5px 0px;
+    --logo-full-light: url('../images/logo-full-light.webp');
+    --logo-square-light: url('../images/logo-square-light.svg');
+    --sidebar-bg-light:#00986A;
+    --seperator-color-light:#E5E8EB;
 
-    --main-bg-dark: #2d2d2d;
-    --second-bg-dark: #202020;
-    --txt-color-dark: #bbbbbb;
-    --box-shadow-dark: rgba(0, 0, 0, 0.2) 0px 5px 10px;
-    --logo-full-dark: url('../images/logo-full-dark.png');
+    --main-bg-dark: #101014;
+    --second-bg-dark: #1A1A1F;
+    --txt-color-dark: #cccccc;
+    --box-shadow-dark: rgba(0, 0, 0, 0.2) 0px 0px 5px 0px;
+    --logo-full-dark: url('../images/logo-full-dark.webp');
+    --logo-square-dark: url('../images/logo-square-dark.svg');
+    --sidebar-bg-dark:#1C1C23;
+    --seperator-color-dark:#363640;
 
     --main-color-blue: #349eff;
     --second-color-blue: #62b4ff;
@@ -44,8 +53,11 @@
     --main-color-orange: #d68102;
     --second-color-orange: #fca11a;
 
+    --sd-color-green-1: #00DF9B;
+    --sd-color-green-2: #15433B; 
+
     --sidebar-width: 240px;
-    --border-radius: 15px;
+    --border-radius: 5px;
     --topnav-height: 60px;
 
     --topnav-logo-height: 0px;
@@ -56,7 +68,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Comfortaa','PingFang SC','Microsoft YaHei', sans-serif;
+    font-family: 'Montserrat','Comfortaa','PingFang SC','Microsoft YaHei', sans-serif;
     -webkit-tap-highlight-color: transparent;
     font-weight: 600;
     
@@ -127,9 +139,10 @@ textarea:hover {
 .card {
     padding: 30px;
     margin-bottom: 30px;
-    background-color: var(--main-bg);
+    background-color: var(--second-bg);
     box-shadow: var(--box-shadow);
     border-radius: var(--border-radius);
+    border: 1px solid var(--main-bg);
 }
 
 .full-height {
