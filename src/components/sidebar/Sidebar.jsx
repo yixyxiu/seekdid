@@ -27,7 +27,18 @@ const SidebarItem = props => {
 
 const Sidebar = props => {
 
-    const activeItem = sidebar_items.findIndex(item => item.route === props.location.pathname)
+    const isActiveItem = (item) => {
+        let find = item.route === props.location.pathname;
+        if (!find) {
+            if (/^\/.*\.bit+$/.test(props.location.pathname)) {
+                let reRoute = '/didgallery.bit';
+                find = item.route == reRoute;
+            }
+        }
+
+        return find;
+    }
+    //const activeItem = sidebar_items.findIndex(item => item.route === props.location.pathname)
     const [t] = useTranslation();
 
     return (
@@ -43,7 +54,7 @@ const Sidebar = props => {
                             <SidebarItem
                                 title={t(item.display_name)}
                                 icon={item.icon}
-                                active={index === activeItem}
+                                active={isActiveItem(item)}
                             />
                         </Link>
                     ))

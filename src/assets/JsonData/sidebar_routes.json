@@ -1,10 +1,5 @@
 [
     {
-        "display_name": "nav.home",
-        "route": "/",
-        "icon": "bx bx-home"
-    },
-    {
         "display_name": "nav.dashboard",
         "route": "/dashboard",
         "icon": "bx bx-category-alt"
@@ -15,23 +10,9 @@
         "icon": "bx bx-search-alt"
     },
     {
-        "display_name": "nav.analysis",
-        "route": "/analysis",
-        "icon": "bx bx-search-alt"
-    },
-    {
-        "display_name": "nav.leaderboard",
-        "route": "/leaderboard",
-        "icon": "bx bx-search-alt"
-    },
-    {
-        "display_name": "nav.clubs",
-        "route": "/clubs",
-        "icon": "bx bx-search-alt"
-    },
-    {
         "display_name": "nav.discover",
-        "route": "/discover",
+        "route": "/didgallery.bit",
         "icon": "bx bx-user-pin"
+        
     }
 ]
