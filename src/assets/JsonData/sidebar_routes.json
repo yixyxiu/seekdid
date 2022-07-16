@@ -10,7 +10,7 @@
         "icon": "bx bx-search-alt"
     },
     {
-        "display_name": "nav.discover",
+        "display_name": "nav.explore",
         "route": "/didgallery.bit",
         "icon": "bx bx-user-pin"
         

@@ -15,6 +15,7 @@ const BitOwnerAccountList = (props) => {
         pageIndex: 1,
         pageCount: 0,
         loading: true,
+        isRequestingData: false,
         owner:"0x0000000000000000000000000000000000000000",
     }
 
@@ -29,7 +30,8 @@ const BitOwnerAccountList = (props) => {
 
     useEffect(() => {
         asyncGetAccountList(data.pageIndex);
-    }, [props]);
+       
+    }, [props.account]);
 
     async function asyncGetAccountList(pageIndex) {
         const requestOptions = {
@@ -95,7 +97,7 @@ const BitOwnerAccountList = (props) => {
     return ( 
         <div className='flex flex-col gap-4'>
             {renderPagination()}
-            {console.log('account list render')}
+            {console.log(`account list render, ${data.loading}`)}
             <div className='mt-2 gap-4 flex flex-wrap justify-center'>
             {
                     data.accountList?.map((item,i) => {

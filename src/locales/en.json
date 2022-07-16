@@ -44,7 +44,7 @@
       "analysis":"Analysis",
       "leaderboard":"Leaderboard",
       "clubs":"Clubs",
-      "discover":"Discover"
+      "explore":"Explore"
 
     },
     "dashboard": {
@@ -83,7 +83,9 @@
       "make-offer":"Make Offer",
       "buy":"BUY",
       "prev-page":"< prev",
-      "next-page":"next >"
+      "next-page":"next >",
+      "explore-other-bit":"Expore another .bit?",
+      "explore-it":""
     },
     "data": {
       "das-big-data":".bit BIG DATA",

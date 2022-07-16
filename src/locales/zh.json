@@ -44,7 +44,7 @@
       "analysis":"数据分析",
       "leaderboard":"排行榜",
       "clubs":"圈子",
-      "discover":"逛一逛"
+      "explore":"逛一逛"
     },
     "dashboard": {
       "sold-summary-card-title":"24小时成交数据",
@@ -82,7 +82,9 @@
       "make-offer":"出 价",
       "buy":"购买",
       "prev-page":"< 上一页",
-      "next-page":"下一页 >"
+      "next-page":"下一页 >",
+      "explore-other-bit":"逛一逛别的.bit页面?",
+      "explore-it":""
     },
     "data": {
       "das-big-data":".bit 大数据",
