@@ -85,7 +85,8 @@
       "prev-page":"< prev",
       "next-page":"next >",
       "explore-other-bit":"Expore another .bit?",
-      "explore-it":""
+      "explore-it":"",
+      "explore-input-placeholder":"Explore..."
     },
     "data": {
       "das-big-data":".bit BIG DATA",

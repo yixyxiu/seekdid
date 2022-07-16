@@ -2,9 +2,9 @@ import React from 'react'
 
 import { useParams } from "react-router-dom";
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect} from 'react';
 
-import { useTranslation } from 'react-i18next'
+//import { useTranslation } from 'react-i18next'
 
 import BitOwnerSummary from '../components/card/bitOwnerSummary';
 import BitOwnerAccountList from '../components/list/bitOwnerAccountList';
@@ -13,7 +13,7 @@ import ExploreAccountInput from '../components/input/exploreAccountInput';
 
 const Detail = () => {
 
-    const [t] = useTranslation()
+    //const [t] = useTranslation()
     
     const { name } = useParams();
 
@@ -35,7 +35,7 @@ const Detail = () => {
             <BitOwnerSummary account={`${name}.bit`}/>
             {console.log('bitOnwersummary render')}
             <div className='h-[1px] seperator border-[0.5px] mt-6 mb-10'></div>
-            <BitOwnerAccountList account={`${name}.bit`}/>
+            <BitOwnerAccountList account={`${name}.bit`} />
             <div className='h-[1px] seperator border-[0.5px] mt-6 mb-10'></div>
             <ExploreAccountInput/>
         </div>

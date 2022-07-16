@@ -28,6 +28,9 @@ const BitOwnerAccountList = (props) => {
 
     const [t] = useTranslation()
 
+    console.log(props.account, data.account);
+    let reset = props.account != data.account ? setData(initData) : false;
+
     useEffect(() => {
         asyncGetAccountList(data.pageIndex);
        
@@ -40,7 +43,7 @@ const BitOwnerAccountList = (props) => {
             body: JSON.stringify({ 
                 account: props.account,
                 page_index: pageIndex,
-                limit:100
+                limit:20
              })
         };
 
