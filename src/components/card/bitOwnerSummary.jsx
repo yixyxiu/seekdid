@@ -89,11 +89,10 @@ const BitOwnerSummary = (props) => {
 
     useEffect(() => {
         asyncGetOwnerSummary(props.account);
-    }, []);
-
+    }, [props]);
 
     const renderGridCell = (item) => {
-        console.log(data);
+        //console.log(data);
         if (data.loading) {
             return  <div className={`flex flex-col animate-pulse `}>
                         <div className="h-6  w-1/2 rounded-full bg-slate-200"/>                         
@@ -138,7 +137,6 @@ const BitOwnerSummary = (props) => {
     const renderAccountName = () => {
 
         let font_Size = calcAccountNameFontSize();
-        console.log(font_Size);
         //let style = {{'font-size': `${fontSize}px`}}
         /*<div className=" text-center h-[60px] font-bold text-[50px] golden-text text-[#000000]/80">{accountName}</div>*/
               
@@ -153,7 +151,7 @@ const BitOwnerSummary = (props) => {
         res
           .json()
           .then(res => {
-                console.log(res);
+                //console.log(res);
                 // data changed
                 let newData = {};
                 newData.ownerSummary = res.account_info;

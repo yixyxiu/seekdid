@@ -80,7 +80,9 @@
       "to-be-recycled":"已到期，即将被系统回收",
       "renew-now":"立即续费",
       "make-offer":"出 价",
-      "buy":"购买"
+      "buy":"购买",
+      "prev-page":"< 上一页",
+      "next-page":"下一页 >"
     },
     "data": {
       "das-big-data":".bit 大数据",

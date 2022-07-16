@@ -81,7 +81,9 @@
       "to-be-recycled":"Expired! To be recycled soon",
       "renew-now":"Renew NOW",
       "make-offer":"Make Offer",
-      "buy":"BUY"
+      "buy":"BUY",
+      "prev-page":"< prev",
+      "next-page":"next >"
     },
     "data": {
       "das-big-data":".bit BIG DATA",

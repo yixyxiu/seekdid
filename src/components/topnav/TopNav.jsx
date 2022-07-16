@@ -20,6 +20,7 @@ import user_menu from '../../assets/JsonData/user_menus.json'
 
 import sidebar_items from '../../assets/JsonData/sidebar_routes.json'
 
+import { useTranslation } from 'react-i18next'
 
 const curr_user = {
     display_name: 'Coming soon..',
@@ -30,6 +31,7 @@ const coming_soon_menu = [{
     "icon": "bx bx-error-circle",
     "content": "Coming soon.."
 }]
+
 
 const renderNotificationItem = (item, index) => (
     <div className="notification-item" key={index}>
@@ -69,14 +71,16 @@ const renderUserMenu =(item, index) => (
     </Link>
 )
 
-const renderNavMenu = (item, index) => (
+const RenderNavMenu = (item, index) => {
+    const [t] = useTranslation()
+    return(
     <Link to={item.route} key={index}>
         <div className="notification-item" key={index}>
             <i className={item.icon}></i>
-            <span>{item.display_name}</span>
+            <span>{t(item.display_name)}</span>
         </div>
-    </Link>
-)
+    </Link>)
+}
 
 const Topnav = () => {
     return (
@@ -138,7 +142,7 @@ const Topnav = () => {
                         icon='bx bx-menu'
                         /*customToggle={() => renderUserToggle(curr_user)}*/
                         contentData={sidebar_items}
-                        renderItems={(item, index) => renderNavMenu(item, index)}
+                        renderItems={(item, index) => RenderNavMenu(item, index)}
                     />
                 </div>
             </div>

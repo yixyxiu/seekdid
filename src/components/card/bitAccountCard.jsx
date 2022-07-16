@@ -96,6 +96,18 @@ const BitAccountCard = (props) => {
             // 有挂单时显示挂单价格
             let listingInfo = markets[0];
             if (listingInfo) {
+                if (!listingInfo.symbol) {
+                    console.log('error, listingInfo.symbol is undefined, account:', accountDetail.account);
+                    if (listingInfo.from === 'didtop') {
+                        listingInfo.symbol = 'CKB';
+                    }
+                    else if (listingInfo.from === 'opensea') {
+                        listingInfo.symbol = 'ETH';
+                    }
+                    else {
+                        listingInfo.symbol = 'ETH';
+                    }
+                }
                 return  <div className='flex flex-row h-6 justify-center'>
                         <img className='h-4 mt-1' src={`images/marketplaces/symbol-${listingInfo.symbol.toLowerCase()}.svg`} alt={`logo-${listingInfo.from}`} ></img>
                         <span className='text-sm mt-1 ml-2 whitespace-nowrap' >{`${numberFormatter(listingInfo.price, 2)} ${listingInfo.symbol}`}</span>
@@ -113,12 +125,10 @@ const BitAccountCard = (props) => {
 
     const renderListingMarket = () => {
         let markets = accountDetail.listing_for_sale;
-        console.log(markets);
         if (markets && markets.length > 0) {
             let listingInfo = markets[0];
             let from_dittop = listingInfo.from === "didtop";
             let from_opensea = listingInfo.from === "opensea";
-            console.log(from_dittop, from_opensea);
 
             if (from_opensea) {
                 return <>

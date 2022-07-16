@@ -50,7 +50,7 @@ const Sidebar = props => {
                 <div className="sidebar__adv"></div>
                 {
                     sidebar_items.map((item, index) => (
-                        <Link to={item.route} key={index}>
+                        <Link to={item.route} key={`${index}-${item.route}`}>
                             <SidebarItem
                                 title={t(item.display_name)}
                                 icon={item.icon}

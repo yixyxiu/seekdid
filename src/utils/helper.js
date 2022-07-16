@@ -12,6 +12,10 @@ const URL_PREFIX_DIDTOP = 'https://did.top/account/'
 const BIT_ERC721_CONTRACTADDR = '0x60eB332Bd4A0E2a9eEB3212cFdD6Ef03Ce4CB3b5';
 
 export function numberFormatter(num, digits) {
+    if (!num) {
+        return '-';
+    }
+
     var si = [
         { value: 1, symbol: "" },
         { value: 1E3, symbol: "K" },

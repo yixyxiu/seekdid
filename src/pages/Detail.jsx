@@ -13,12 +13,12 @@ import BitOwnerAccountList from '../components/list/bitOwnerAccountList';
 const Detail = () => {
 
     const [t] = useTranslation()
-
+    
     const { name } = useParams();
 
     useEffect(() => {
-        
-    }, []);
+
+    }, [name]);
     
     return (
         <div className='flex flex-col p-5 bg-main-card bg-box-shadow rounded-[10px]'>
