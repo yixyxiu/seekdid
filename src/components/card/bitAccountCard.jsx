@@ -111,7 +111,7 @@ const BitAccountCard = (props) => {
                 return  <div className='flex flex-row h-6 justify-center'>
                         <img className='h-4 mt-1' src={`images/marketplaces/symbol-${listingInfo.symbol.toLowerCase()}.svg`} alt={`logo-${listingInfo.from}`} ></img>
                         <span className='text-sm mt-1 ml-2 whitespace-nowrap' >{`${numberFormatter(listingInfo.price, 2)} ${listingInfo.symbol}`}</span>
-                        <a className="group px-3 h-[24px] bg-[#00DF9B] ml-2 rounded-full pt-1 text-center text-[#fff] text-[12px] group-hover:text-black group-hover:bg-[#aabb00] font-semibold" href={getAccountMarketLink(listingInfo.from, accountDetail.account)} rel="noopener noreferrer" target="_blank">
+                        <a className="group h-[24px] w-[72px] bg-[#00DF9B] ml-2 rounded-full pt-1 text-center text-[#fff] text-[12px] group-hover:text-black group-hover:bg-[#aabb00] font-semibold" href={getAccountMarketLink(listingInfo.from, accountDetail.account)} rel="noopener noreferrer" target="_blank">
                             🛒{t("accountlist.buy")}
                         </a> 
                     </div>

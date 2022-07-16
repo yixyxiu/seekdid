@@ -18,7 +18,7 @@ const BitOwnerAccountList = (props) => {
         owner:"0x0000000000000000000000000000000000000000",
     }
 
-    console.log(props)
+    //console.log(props)
     
     const accountName = props.account.substring(0, props.account.length-4);   
 
@@ -28,12 +28,7 @@ const BitOwnerAccountList = (props) => {
     const [t] = useTranslation()
 
     useEffect(() => {
-        console.log(initData.account, 'accountlist useeffect')
         asyncGetAccountList(data.pageIndex);
-
-        return () => {
-            console.log('account list clear');
-        }
     }, [props]);
 
     async function asyncGetAccountList(pageIndex) {
@@ -92,7 +87,7 @@ const BitOwnerAccountList = (props) => {
 
         return <div className='flex flex-row gap-4 place-content-center'>
             {prevPageBtn}
-            <button>{data.pageIndex}</button>
+            <span>{data.pageIndex}/{data.pageCount}</span>
             {nextPageBtn}
         </div>
     }
