@@ -29,7 +29,7 @@ const Sidebar = props => {
 
     const isActiveItem = (item) => {
         let find = item.route === props.location.pathname;
-        console.log(props.location.pathname)
+
         if (!find) {
             if (/^\/.*\.bit+$/.test(props.location.pathname)) {
                 let reRoute = '/didgallery.bit';

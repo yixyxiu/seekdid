@@ -22,13 +22,13 @@ const DailyOwnerChart = (props) => {
 
     useEffect(() => {
         console.log('begin useEffect')
-        asyncGetData();
+        Get_daily_new_owner();
 
         clearInterval(intervalRef.current);
 
         // 5分钟更新一次数据
         intervalRef.current = setInterval(() => {
-            asyncGetData();
+            Get_daily_new_owner();
         }, 5 * 60 * 1000);
         
         console.log('end useEffect')
@@ -37,18 +37,38 @@ const DailyOwnerChart = (props) => {
         }
     }, []);
 
-    const asyncGetData = () => {
-        console.log('begin asyncGetData')
-        let dailyOwnerData = GetDailyOwnerData();
-        
-        if (dailyOwnerData) {
-            setTimeout(() => {
-                console.log('begin setData')
-                setData(dailyOwnerData);
-                console.log('eeeeeeee');
-            }, 1000);
-        }
-        console.log('end asyncGetData')
+    const Get_daily_new_owner = () => {
+
+        let url = 'https://api.das.la/api/v1/das_accounts/daily_new_owner?begin_at=2021-07-21'
+
+        let totaldata = [];
+
+        fetch(url)
+        .then((response) => response.json())
+        .then((dailydata) => {
+            let recentData = [];
+            let sum = 0;
+            for (let index = 0; index < dailydata.length; index++) {
+                let total = {};
+                total["date"] = dailydata[index].date;
+                if (index > 0) {
+                    sum = totaldata[index - 1].total;
+                }
+                total["value"] = dailydata[index].total;
+                total["total"] = dailydata[index].total + sum;
+                
+                totaldata.push(total);
+                
+                if (index > dailydata.length - 4) {
+                    recentData.push(total);
+                }
+            }
+            
+            setData(totaldata);
+        })
+        .catch((error) => {
+            console.log('fetch GetDailyOwnerData data Error', error);
+        });
     };
 
     const getThemeColor = () => {
