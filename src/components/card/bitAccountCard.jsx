@@ -225,7 +225,7 @@ const BitAccountCard = (props) => {
                 </div>
     }
 
-    return (<div className="p-2.5 flex flex-col gap-3.5 bg-box  shadow-[0_0_10px_0px_rgba(0,0,0,0.3)] w-[250px] h-[300px] rounded-[10px] ">
+    return (<div className="p-2.5 flex flex-col gap-3.5 bg-box  shadow-[0_0_10px_0px_rgba(0,0,0,0.3)] w-full md:w-[250px] h-[300px] rounded-[10px] ">
                 <div className="flex flex-row h-[14px] pl-2.5">
                     <img className="h-[14px]" src={'images/seekdid/logo_1_5@10x.svg'}/>
                 </div> 

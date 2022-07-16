@@ -162,7 +162,7 @@ const BitOwnerSummary = (props) => {
           .catch(err => setErrors(err));
     }
     
-    return (<div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-5 ">
+    return (<div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:p-5 ">
     <div className="flex py-8 gap-4 flex-col rounded-[10px] bg-[#00DF9B] border-[5px] border-[#CFFFF0] w-full md:w-full h-[200px] items-center">
         {renderAccountName()}
         <div className="mb-7 justify-center items-center flex text-[35px] w-24 font-bold rounded-full bg-[#00B981] text-[#000000]/60 golden-text-shadow" >.bit</div>
