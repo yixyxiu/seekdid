@@ -85,7 +85,9 @@
       "next-page":"下一页 >",
       "explore-other-bit":"逛一逛别的.bit页面?",
       "explore-it":"",
-      "explore-input-placeholder":"输入账号..."
+      "explore-input-placeholder":"输入账号...",
+      "bit-not-registered-tip":"还未被注册，你可以现在注册并拥有它。",
+      "register-now":"立即注册"
     },
     "data": {
       "das-big-data":".bit 大数据",

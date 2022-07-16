@@ -105,3 +105,16 @@ export const timestampToString = (timestamp) => {
     date.getHours(),
   )}:${formatData(date.getMinutes())}:${formatData(date.getSeconds())}`
 }
+
+
+export function getBitRegisterLink(account) {
+    let url = `https://app.did.id/account/register/${account}?inviter=seekdid.bit&channel=seekdid.bit&utm_source=seekdid`;
+
+    return url;
+}
+
+export function getBitSearchForRegLink(account) {
+    let url = `https://app.did.id/explorer?searchWord=${account}&inviter=seekdid.bit&channel=seekdid.bit&utm_source=seekdid`;
+
+    return url;
+}

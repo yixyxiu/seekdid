@@ -7,18 +7,18 @@ const BitOwnerSummary = (props) => {
 
     const initAccount = props.account;
     const initOwnerSummary = {
-            "total_accounts":0,
-            "hodl_rank":0,
-            "four_len_num":0,
-            "five_len_num":0,
-            "sixplus_len_num":0,
-            "hodl_num":0,
-            "for_sale_num":0,
-            "has_bid_num":0,
-            "expired_soon_num":0,
-            "tobe_recycled_num":0,
-            "fav_num":0,
-            "fans_num":0
+            "total_accounts":'-',
+            "hodl_rank":'-',
+            "four_len_num":'-',
+            "five_len_num":'-',
+            "sixplus_len_num":'-',
+            "hodl_num":'-',
+            "for_sale_num":'-',
+            "has_bid_num":'-',
+            "expired_soon_num":'-',
+            "tobe_recycled_num":'-',
+            "fav_num":'-',
+            "fans_num":'-'
         }
 
     const dataGridInfo = [
@@ -109,8 +109,12 @@ const BitOwnerSummary = (props) => {
             <span className="text-sm font-bold">{t(item.i18nKey)}</span>
           </div>
         }
-        
-        return <div></div>
+        else {
+            return  <div key={`${item.account}-${item.dataKey}`} className="flex flex-col h-[86px] text-center border-[0.1px] seperator justify-center align-items-center">
+            <span className={`text-[${item.valueColor}] text-2xl font-bold`}>{initOwnerSummary[item.dataKey]}</span>
+            <span className="text-sm font-bold">{t(item.i18nKey)}</span>
+          </div>
+        }
     }
 
     // 根据账号长度计算字体大小
