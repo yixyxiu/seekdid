@@ -53,7 +53,7 @@ export const BitSoldVolumeSummary = (props) => {
                 
                 <div className={`flex flex-row mb-2 border-b-[1px] border-line seperator `}>
                     <div className='px-2 flex grow content-left'>
-                        <span className='text-[30px]' >{numberFormatter(props.summaryData.summary.num, 0)}</span>
+                        <span className='text-[30px]' >{numberFormatter(props.summaryData.summary.num, 2)}</span>
                         <span className='text-base mt-4 ml-1' >{`${t('dashboard.summary-volume-unit')}`}</span>
                     </div>
                         
@@ -68,7 +68,7 @@ export const BitSoldVolumeSummary = (props) => {
                         return <div key={`${i}-${item.from}`} className={`flex flex-row`}>
                         <div className='py-2 px-2 flex grow content-center'>
                             <img className='w-5 h-5 mr-3 rounded-full' src={`images/marketplaces/${item.from.toLowerCase()}-color.svg`} alt={`logo-${item.from}`} ></img>
-                            <span className='text-sm ml-2' >{`${numberFormatter(item.num, 0)} ${t('dashboard.summary-volume-unit')}`}</span>
+                            <span className='text-sm ml-2' >{`${numberFormatter(item.num, 2)} ${t('dashboard.summary-volume-unit')}`}</span>
                         </div>
                         
                         <div className='py-2 flex flex-row justify-end'>
