@@ -32,6 +32,8 @@ const Detail = () => {
     
     return (
         <div className='flex flex-col p-5 bg-main-card bg-box-shadow rounded-[10px]'>
+            <ExploreAccountInput/>
+            <div className='h-[1px] seperator border-[0.5px] my-6'></div>
             <BitOwnerSummary account={`${name}.bit`}/>
             {console.log('bitOnwersummary render')}
             <div className='h-[1px] seperator border-[0.5px] mt-6 mb-10'></div>
