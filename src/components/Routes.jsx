@@ -15,7 +15,7 @@ import Discover from '../pages/Discover'
 const Routes = () => {
     return (
         <Switch>
-            <Route path='/' exact component={Home}/>
+            <Route path='/' exact component={SeekTool}/>
             <Route path='/home' component={Home}/>
             <Route path='/:name.bit' component={Detail}/>
             <Route path='/seek' exact component={SeekTool}/>
