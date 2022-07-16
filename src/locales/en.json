@@ -87,7 +87,8 @@
       "explore-other-bit":"Expore another .bit?",
       "explore-it":"",
       "explore-input-placeholder":"Explore...",
-      "bit-not-registered-tip":"is not yet registered, you can register and own it."
+      "bit-not-registered-tip":"is not yet registered, you can register and own it.",
+      "register-now":"REGISTER NOW"
     },
     "data": {
       "das-big-data":".bit BIG DATA",

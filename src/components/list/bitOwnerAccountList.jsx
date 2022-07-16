@@ -87,7 +87,7 @@ const BitOwnerAccountList = (props) => {
             
             return  <div className='flex flex-col items-center place-content-center mb-5 gap-4'>
                         <div className='text-center w-full text-[#00DF9B] text-4xl'>{`${data.account}`}</div>
-                        <span className='flex'>{t('accountlist.bit-not-registered-tip')}</span>
+                        <span className='text-center w-full '>{t('accountlist.bit-not-registered-tip')}</span>
                         <a className='group pt-1 h-[28px] px-5 text-[#000] bg-[#00DF9B] ml-2 rounded-full text-center text-[#fff] text-[14px] group-hover:text-black group-hover:bg-[#aabb00] font-semibold' href={getBitSearchForRegLink(data.account)} rel="noopener noreferrer" target='_blank'>
                         {t('accountlist.register-now')}👉
                         </a>
