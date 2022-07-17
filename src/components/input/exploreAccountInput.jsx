@@ -23,7 +23,7 @@ const ExploreAccountInput = (props) => {
     const handleKeyDown = event => {
         if (event.key === 'Enter') {
             let value = getValidInput();
-            if (value.length > 0) {
+            if (value.length > 3) {
                 let url = `/${value}.bit`;
                 document.location.href = url;
                 document.location.rel = "noopener noreferrer";
@@ -52,7 +52,7 @@ const ExploreAccountInput = (props) => {
 
     const renderSearchLink = () => {
         let value = getValidInput();
-        if (value.length > 0) {
+        if (value.length > 3) {
             return <a className='group pt-1 w-[28px] h-[28px] bg-[#00DF9B] ml-2 rounded-full text-center text-[#fff] text-[14px] group-hover:text-black group-hover:bg-[#aabb00] font-semibold' href={`/${value.trim()}.bit`} rel="noopener noreferrer">
                 🔍 {t('accountlist.explore-it')}
             </a>
