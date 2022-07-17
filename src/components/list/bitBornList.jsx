@@ -168,12 +168,23 @@ const BitBornList = () => {
         let duration = calcRegisteredDuration(regInfo.registered_at, regInfo.expired_at);
         let str_years = duration > 1 ? 'years' : 'year';
 
-        if (regInfo.inviter_account) {
-            return ` registered for ${duration} ${str_years}, invited by `
+        if (duration > 1) {
+            if (regInfo.inviter_account) {
+                return ` registered for ${duration} ${str_years}, invited by `
+            }
+            else {
+                return ` registered for ${duration} ${str_years}`
+            }
         }
         else {
-            return ` registered for ${duration} ${str_years}`
+            if (regInfo.inviter_account) {
+                return ` registered, invited by `
+            }
+            else {
+                return ` registered`
+            }
         }
+        
     }
 
     let skeletonRows = Array(5).fill(0);

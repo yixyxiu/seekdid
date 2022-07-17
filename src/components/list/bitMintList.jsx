@@ -151,7 +151,7 @@ const BitMintList = () => {
     }
     
     const renderMintInfo = (regInfo) =>{
-        return ` was minted`
+        return ` minted`
     }
 
     let skeletonRows = Array(5).fill(0);

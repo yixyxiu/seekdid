@@ -118,7 +118,7 @@
       
     },
     "search": {
-      "bulk-search":"Bulk Search",
+      "bulk-search-title":"Bulk Search",
       "search-edit-placeholder":"Type or paste the list of .bit accounts you want to register.",
       "search-btn":"Search",
       "clear-btn":"Clear"

@@ -31,6 +31,9 @@ const TimeDifferLabel = (props) => {
     const update = () => {
         setShowText(getTimeDiffString(props.startTime));
     }
+
+    const formatData = (data) => (data < 10 ? `0${data}` : data)
+    
     /**
      * 
      * @param {timestamp} from 
@@ -58,6 +61,13 @@ const TimeDifferLabel = (props) => {
         // 一天内用小时表示
         if (diff < 24*60*60) {
             return `${Math.floor(diff /(60*60))} ${t('common.hour_ago')}`
+        }
+
+        if (diff < 7*24*60*60) {
+            const date = new Date(from * 1000)
+            return `${formatData(date.getMonth() + 1)}/${formatData(date.getDate())} ${formatData(
+                date.getHours(),
+              )}:${formatData(date.getMinutes())}:${formatData(date.getSeconds())}` 
         }
             
         return timestampToString(from * 1000)

@@ -58,7 +58,7 @@ const SeekTool = () => {
     }
 
     return (
-        <div>SeekDIDs, {}
+        <div>{t('search.bulk-search-title')}
         <div className='w-full mt-6'>
             <div className="flex flex-col">
 
@@ -67,6 +67,7 @@ const SeekTool = () => {
                 <div className="flex flex-row w-full justify-center items-center my-4 pb-12 gap-5">
                     <button onClick={onSearch} className="flex-1 px-4 py-4 text-md text-primary bg-box text-center font-semibold shadow leading-none outline-black default-btn rounded-lg">{t('search.search-btn')}</button>
                     <button onClick={onClearEdit} className="flex-1 px-4 py-4 text-md text-primary bg-box text-center font-semibold shadow leading-none outline-black rounded-lg">{t('search.clear-btn')}</button>
+                    <div onClick={onSearch} className="flex-1 px-4 text-[#fff] w-[100px] text-md bg-[#00DF9B] text-primary h-[30px]  text-center font-semibold rounded-full">{t('search.search-btn')}</div>
 
                 </div>
 

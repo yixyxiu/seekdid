@@ -118,7 +118,7 @@
       
     },
     "search": {
-      "bulk-search":"批量查询",
+      "bulk-search-title":"批量查询",
       "search-edit-placeholder":"将你想要的账号列表输入/粘贴到编辑框内，或者粘贴一篇英文文章到编辑框内，精准查询到所有账号的状态。",
       "search-btn":"批量查询",
       "clear-btn":"清空输入"
