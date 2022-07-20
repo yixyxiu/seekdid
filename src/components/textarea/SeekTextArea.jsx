@@ -39,7 +39,7 @@ const SeekTextArea = forwardRef((props, ref) => {
 
     const OnEditChanged = (e) => {
         let input = e.target.value
-        let wordList = input.match(/[a-z0-9]+/gi);
+        let wordList = input.match(/[a-z0-9\-]+/gi);
 
         if (wordList) {
             let words = wordList.filter(word => word.length > 3);

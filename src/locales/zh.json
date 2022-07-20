@@ -121,7 +121,29 @@
       "bulk-search-title":"批量查询",
       "search-edit-placeholder":"将你想要的账号列表输入/粘贴到编辑框内，或者粘贴一篇英文文章到编辑框内，精准查询到所有账号的状态。",
       "search-btn":"批量查询",
-      "clear-btn":"清空输入"
+      "clear-btn":"清空输入",
+      "status-available":"可注册",
+      "status-reserved":"保留账号",
+      "status-registering":"他人注册中",
+      "status-registered":"已被注册",
+      "status-notopen":"暂未开放注册",
+      "status-onsale":"在售",
+      "status-wait4open":"等待开放",
+      "register":"注册",
+      "filter-all-account":"全部账号",
+      "filter-available":"可注册账号",
+      "filter-release-soon":"即将开放账号",
+      "filter-on-sale":"在售账号",
+      "filter-not-yet-open-account":"暂未开放的账号",
+      "filter-registered":"已注册的账号",
+      "filter-reserved-account":"系统保留账号",
+      "filter-registering":"注册中的账号",
+      "top-categories":"热门列表：",
+      "10k-club":"10K俱乐部",
+      "0x99-club":"0x99俱乐部",
+      "0x999-club":"0x999俱乐部",
+      "date-club":"📅日期",
+      "time-club":"⏰时间"
     }
 
   }

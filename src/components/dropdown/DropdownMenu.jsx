@@ -43,8 +43,9 @@ const DropdownMenu = props => {
         }
     }
 
+    const exClassName = props.className ? props.className : '';
     return (
-        <div className='dropdown'>
+        <div className={`dropdown ${exClassName}`}>
             <button ref={dropdown_toggle_el} className="dropdown__toggle">
                 {
                     props.icon ? <i className={props.icon}></i> : ''

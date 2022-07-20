@@ -8,8 +8,8 @@
 
 
 :root {
-    --main-bg: #ffffff;
-    --second-bg: #fafafb;
+    --main-bg: #fafafb;
+    --second-bg: #fff;
     --txt-color: #455560;
     --txt-white: #fff;
     --card-title-color:#00986A;
@@ -20,8 +20,8 @@
     --logo-square: url('../images/logo-square-light.svg');
     --sidebar-bg:#00986A;
 
-    --main-bg-light: #ffffff;
-    --second-bg-light: #fafafb;
+    --main-bg-light: #fafafb;
+    --second-bg-light: #ffffff;
     --txt-color-light: #333333;
     --box-shadow-light: rgba(0, 0, 0, 0.2) 0px 0px 5px 0px;
     --logo-full-light: url('../images/logo-full-light.webp');
@@ -215,3 +215,59 @@ textarea:hover {
 .bg-box {
     background-color: var(--main-bg);
 }
+
+.dropdown-icon-fa {
+    font-size: 1.0rem;
+    transition: color ease-in-out 0.4s;
+    line-height: 24px;
+    margin-right: 0.5rem;
+}
+
+.fa-clone {
+    font-size: 1.0rem;
+    transition: color ease-in-out 0.4s;
+    color: #ff7a18;
+  }
+
+  .fa-check {
+    font-size: 1.2rem;
+    transition: color ease-in-out 0.4s;
+    color: 22C493;
+  }
+
+  .fa-registered {
+    color: #FFA800;
+  }
+
+  .fa-check-circle {
+    color: #22C493;
+  }
+
+  .fa-calendar {
+    color: #22C493;
+  }
+
+
+  .fa-diamond {
+    color:purple
+  }
+
+  .fa-certificate {
+    color: #22C493;
+  }
+
+  .fa-usd {
+    color: mediumseagreen;
+  }
+
+  .fa-lock {
+    color:slategray;
+  }
+
+  .fa-list-ul {
+    color: black;
+  }
+
+  .fa-exclamation-circle {
+    color:#DF4A46;
+  }

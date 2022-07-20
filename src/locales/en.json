@@ -56,12 +56,12 @@
       "summary-volume-unit":"USDC",
       "summary-address-buyers":"Buyers",
       "summary-address-sellers":"Sellers",
-      "new-born-card-title":"NEW ACCOUNTS",
-      "new-mint-card-title":"NEW MINT",
+      "new-born-card-title":"LATEST ACCOUNTS",
+      "new-mint-card-title":"LATEST MINT",
       "today-new":"Today: ",
-      "listing-list-card-title":"LAST LISTING",
-      "offer-list-card-title":"LAST OFFERS",
-      "sold-list-card-title":"LAST SALES"
+      "listing-list-card-title":"LATEST LISTING",
+      "offer-list-card-title":"LATEST OFFERS",
+      "sold-list-card-title":"LATEST SALES"
     },
     "accountownersummary": {
       "total_accounts":"accounts",
@@ -121,7 +121,29 @@
       "bulk-search-title":"Bulk Search",
       "search-edit-placeholder":"Type or paste the list of .bit accounts you want to register.",
       "search-btn":"Search",
-      "clear-btn":"Clear"
+      "clear-btn":"Clear",
+      "status-available":"Available",
+      "status-reserved":"Reserved",
+      "status-registering":"Registering",
+      "status-registered":"Registered",
+      "status-notopen":"Not open",
+      "status-onsale":"ON SALE",
+      "status-wait4open":"Wait for Opening",
+      "register":"REGISTER",
+      "filter-all-account":"All Account",
+      "filter-available":"Available",
+      "filter-release-soon":"Release soon",
+      "filter-on-sale":"On Sale",
+      "filter-not-yet-open-account":"Not yet Open Account",
+      "filter-registered":"Rigistered",
+      "filter-reserved-account":"Reserved Account",
+      "filter-registering":"Rigistering",
+      "top-categories":"TOP CATEGORIES: ",
+      "10k-club":"10K Club",
+      "0x99-club":"0x99 Club",
+      "0x999-club":"0x999 Club",
+      "date-club":"📅DATE Club",
+      "time-club":"⏰TIME Club"
     }
   }
 }

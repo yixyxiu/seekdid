@@ -32,9 +32,9 @@ export const DASACCOUNTSTATUS = {
 ]*/
 
 export const AccountStatusColors = {
-    '0':'#1890ff',      // 可注册
+    '0':'#2471FE',      // 可注册
     '1':'#00E09C',      // 即将开放 
-    '2':'#1890ff',      // 在售
+    '2':'#2471FE',      // 在售
     '3':'#DF4A46',      // 未开放
     '4':'#FFA800',      // 已注册
     '5':'#808191',      // 保留
@@ -164,19 +164,19 @@ export const TABLEFILTER =
 export const getAccountStatusString = (status) => {
     let tips = ""
     switch (status) {
-        case DASACCOUNTSTATUS.Available: tips = i18n.t("das-account-status-available"); 
+        case DASACCOUNTSTATUS.Available: tips = i18n.t("search.status-available"); 
             break;
-        case DASACCOUNTSTATUS.Reserved: tips = i18n.t("das-account-status-reserved"); 
+        case DASACCOUNTSTATUS.Reserved: tips = i18n.t("search.status-reserved"); 
             break;
-        case DASACCOUNTSTATUS.ScheOpen: tips = i18n.t("das-account-status-wait4open");
+        case DASACCOUNTSTATUS.ScheOpen: tips = i18n.t("search.status-wait4open");
             break;
-        case DASACCOUNTSTATUS.Registering: tips = i18n.t("das-account-status-registering"); 
+        case DASACCOUNTSTATUS.Registering: tips = i18n.t("search.status-registering"); 
             break;
-        case DASACCOUNTSTATUS.Registered: tips = i18n.t("das-account-status-registered"); 
+        case DASACCOUNTSTATUS.Registered: tips = i18n.t("search.status-registered"); 
             break;
-        case DASACCOUNTSTATUS.NotOpen: tips = i18n.t("das-account-status-notopen"); 
+        case DASACCOUNTSTATUS.NotOpen: tips = i18n.t("search.status-notopen"); 
             break;
-        case DASACCOUNTSTATUS.OnSale: tips = i18n.t("das-account-status-onsale"); 
+        case DASACCOUNTSTATUS.OnSale: tips = i18n.t("search.status-onsale"); 
             break;
         default:break;
     }

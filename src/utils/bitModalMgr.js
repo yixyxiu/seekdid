@@ -130,7 +130,7 @@ export class dotbitModalMgr {
     }
 
     getAccountListByFilter = (dataSrcList, accountStatus) => {
-        console.log('getAccountListByFilter, accountStatus:' + accountStatus);
+        //console.log('getAccountListByFilter, accountStatus:' + accountStatus);
         if (accountStatus === "-1") {
             //console.log(JSON.stringify(dataSrcList));
             return dataSrcList;
@@ -190,13 +190,14 @@ export class dotbitModalMgr {
 
         //this.setState({isLoadingMain: true});
 
+        //console.log(wordList)
         for (let i = 0; i < wordList.length; i++) {
             let item = wordList[i];
 
             //去标点符号并转小写
-            item = item.replace(/\s/g, "").replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
+            item = item.replace(/\s/g, "").replace(/[^a-zA-Z0-9\-]/g, "").toLowerCase();
             //过滤非数字和字母组合
-            if (/^[a-zA-Z\d]+$/.test(item)) {
+            if (/^[a-zA-Z\-\d]+$/.test(item)) {
                 // 大于20位的，das.la 不推荐，小于4位的不支持
                 if (item.length < 4 || item.length > 20) {
                     continue;
