@@ -197,7 +197,7 @@ const SeekTool = () => {
                     <span className='rounded-full text-sm px-3 flex items-center justify-center text-[#00DF9B]'>{t("search.top-categories")}</span>
                     {
                         top_categories_config.map((item, i) => {
-                            return <div className='rounded-full text-sm px-3 py-1 flex items-center justify-center border-[1px] border-green-1 shadow-lg' onClick={ () => onLoadCategory(item.file)}>
+                            return <div className='rounded-full text-sm px-3 py-1 flex items-center justify-center border-[1px] border-green-1 shadow-lg cursor-pointer' onClick={ () => onLoadCategory(item.file)}>
                                 {t(item.name)}
                             </div>
                         })
