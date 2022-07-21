@@ -20,14 +20,12 @@ const Dashboard = () => {
     return (
         <div>
             <div className="grid gap-4 md:flex md:flex-row">
-                <div className="w-full md:w-8/12 grid-cols-1 md:grid-cols-2 ">
+                <div className="w-full md:w-7/12 grid-cols-1 md:grid-cols-2 ">
                     <BitSoldSummary/>
                 </div>
-                <div className="w-full md:w-4/12 flex flex-col gap-4">
+                <div className="w-full md:w-5/12 flex flex-col gap-4">
                     <BitBornList/>
                     <BitMintList/>
-                    
-
                 </div>
                 
             </div>
