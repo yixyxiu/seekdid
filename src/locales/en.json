@@ -115,7 +115,8 @@
      
     },
     "footer": {
-      
+      "feedback":"Feedback",
+      "followus":"Follow US"
     },
     "search": {
       "bulk-search-title":"Bulk Search",

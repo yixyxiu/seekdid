@@ -14,6 +14,7 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 
 import ThemeAction from '../../redux/actions/ThemeAction'
+import Footer from '../footer/Footer'
 
 const Layout = () => {
 
@@ -49,6 +50,7 @@ const Layout = () => {
                         <div className="p-3 md:p-7">
                             <Routes/>
                         </div>
+                        <Footer></Footer>
                     </div>
                 </div>
             )}/>

@@ -115,7 +115,8 @@
      
     },
     "footer": {
-      
+      "feedback":"意见反馈",
+      "followus":"关注我们"
     },
     "search": {
       "bulk-search-title":"批量查询",
