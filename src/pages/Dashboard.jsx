@@ -29,7 +29,7 @@ const Dashboard = () => {
                 </div>
                 
             </div>
-            <div className="w-full flex flex-col gap-4 md:flex-row md:justify-between my-4">
+            <div className="w-full grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-4">
                 <BitListingList/>
                 <BitOfferList/>
                 <BitSoldList/>

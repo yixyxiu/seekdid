@@ -112,7 +112,7 @@ const BitSoldList = () => {
     let skeletonRows = Array(10).fill(0);
 
     return (
-        <div className='flex flex-col rounded-lg p-5 hover-up-2 bg-main-card min-w-[370px] md:max-w-[380px] min-h-[310px] bg-box-shadow'>
+        <div className='flex flex-col rounded-lg p-5 hover-up-2 bg-main-card bg-box-shadow'>
             <div className='flex flex-row mb-2' >
                 <div className='grow text-base card-title'>✅{t('dashboard.sold-list-card-title')}</div>
             </div>
