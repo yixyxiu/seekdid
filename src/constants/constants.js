@@ -7,13 +7,13 @@ export const FIXMETHODS = {
 }
 
 export const DASACCOUNTSTATUS = {
-    Available: '0',
-    ScheOpen:'1',
-    OnSale:'2',
-    NotOpen: '3',
-    Registered: '4',
-    Reserved: '5',
-    Registering: '6',
+    Available: 0,
+    ScheOpen:1,
+    OnSale:2,
+    NotOpen: 3,
+    Registered: 4,
+    Reserved: 5,
+    Registering: 6,
 }
 
 // 注意，顺序与上面的DASACCOUNTSTATUS保持一致
@@ -32,13 +32,13 @@ export const DASACCOUNTSTATUS = {
 ]*/
 
 export const AccountStatusColors = {
-    '0':'#2471FE',      // 可注册
-    '1':'#00E09C',      // 即将开放 
-    '2':'#2471FE',      // 在售
-    '3':'#DF4A46',      // 未开放
-    '4':'#FFA800',      // 已注册
-    '5':'#808191',      // 保留
-    '6':'#FFD717',      // 注册中
+    0:'#2471FE',      // 可注册
+    1:'#00E09C',      // 即将开放 
+    2:'#2471FE',      // 在售
+    3:'#DF4A46',      // 未开放
+    4:'#FFA800',      // 已注册
+    5:'#808191',      // 保留
+    6:'#FFD717',      // 注册中
 }
     
 export const defLocalConfig= {

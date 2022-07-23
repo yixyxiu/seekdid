@@ -18,6 +18,9 @@ const SeekTool = () => {
     const [t] = useTranslation();
     const [searchStatusFilter, setSearchStatusFilter] = useState({status: '-1'});
     const [searchResult, setSearchResult] = useState([]);
+    const [hasError, setErrors] = useState(false);
+    const [loading, setLoading] = useState(false);
+
 
     const searchEditRef = useRef(null);
     
@@ -32,6 +35,11 @@ const SeekTool = () => {
             "name":"search.filter-available",
             "status":'0',
             "iconClass":"fa fa-check-circle dropdown-icon-fa"
+        },
+        {
+            "name":"search.filter-on-sale",
+            "status":'2',
+            "iconClass":"fa fa-usd dropdown-icon-fa"
         },
         {
             "name":"search.filter-not-yet-open-account",
@@ -53,23 +61,23 @@ const SeekTool = () => {
     const top_categories_config = [
         {
             "name":"search.10k-club",
-            "file":"4number.json"
+            "category":"10kClub"
         },
         {
             "name":"search.0x99-club",
-            "file":"0x99.json"
+            "category":"2HexClub"
         },
         {
             "name":"search.0x999-club",
-            "file":"0x999.json"
+            "category":"3HexClub"
         },
         {
             "name":"search.date-club",
-            "file":"dateMMDD.json"
+            "category":"DateClub"
         },
         {
             "name":"search.time-club",
-            "file":"time00h00.json"
+            "category":"TimeClub"
         }
     ]
 
@@ -120,10 +128,19 @@ const SeekTool = () => {
     const onSearch = () => {
         let wordList = searchEditRef.current.getWordList();
         
-        let data = dasData.localSearch(wordList, {status: '-1'});
+      //  let data = dasData.localSearch(wordList, {status: '-1'});
         //console.log(data);
+        let accountList = [];
+        wordList.forEach(element => {
+            accountList.push(element+'.bit');
+        });
 
-        setSearchResult(data.list);
+        // todo，限制最多 1000 个
+        setLoading(true);
+        setSearchResult([]);
+        setTimeout( () => {
+            asyncBulkSearchForRegister(accountList)
+        }, 10) 
     }
 
     const onClearEdit = () => {
@@ -167,25 +184,66 @@ const SeekTool = () => {
         })
     }
 
-    const onLoadCategory = (fileName) => {
-        let jsonList = require(`../constants/data/${fileName}`);
+    async function asyncBulkSearchForRegister(wordList) {
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ 
+                accounts: wordList
+             })
+        };
+
+        let url = `https://api.das.la/api/v2/das_accounts/bulk_search_for_register/`
+        const res = await fetch(url, requestOptions);
+        res
+          .json()
+          .then(res => {
+                //console.log(res);
+                if (res.accounts) {
+                    setSearchResult(res.accounts);
+                }
+                else {
+                    setSearchResult([]);
+                }
+            })
+          .catch(err => setErrors(err));
         
-        if (!jsonList){
-            return;
-        }
+        setLoading(false);
+    }
 
-        let wordList = JSON.stringify(jsonList).match(/[a-z0-9\-]+/gi);
+    async function asyncCategorySearchForRegister(categoryName) {
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ 
+                category: categoryName
+             })
+        };
 
-        if (wordList) {
-            wordList = [...new Set(wordList)].sort(function (a, b) {
-                return a.length - b.length;
-            });
-        }
+        let url = `https://api.das.la/api/v2/das_accounts/category_search_for_register/`
+        const res = await fetch(url, requestOptions);
+        res
+          .json()
+          .then(res => {
+            //    console.log(res);
+                if (res.accounts) {
+                    setSearchResult(res.accounts);
+                }
+                else {
+                    setSearchResult([]);
+                }
+            })
+          .catch(err => setErrors(err));
+        
+        setLoading(false);
+    }
 
-        let data = dasData.localSearch(wordList, {status: '-1'});
-        //console.log(data);
-
-        setSearchResult(data.list);
+    const onLoadCategory = (category) => {
+        setLoading(true);
+        setSearchResult([]);
+        setTimeout( () => {
+            asyncCategorySearchForRegister(category)
+        }, 10) 
     }
 
     return (
@@ -197,7 +255,7 @@ const SeekTool = () => {
                     <span className='rounded-full text-sm px-3 flex items-center justify-center text-[#00DF9B]'>{t("search.top-categories")}</span>
                     {
                         top_categories_config.map((item, i) => {
-                            return <div className='rounded-full text-sm px-3 py-1 flex items-center justify-center border-[1px] border-green-1 shadow-lg cursor-pointer' onClick={ () => onLoadCategory(item.file)}>
+                            return <div className='rounded-full text-sm px-3 py-1 flex items-center justify-center border-[1px] border-green-1 shadow-lg cursor-pointer' onClick={ () => onLoadCategory(item.category)}>
                                 {t(item.name)}
                             </div>
                         })
@@ -216,8 +274,7 @@ const SeekTool = () => {
 
                 </div>
                 
-
-                <BitRegisterSearchResultList dataList={searchResult} filter={searchStatusFilter}/>
+                <BitRegisterSearchResultList loading={loading} dataList={searchResult} filter={searchStatusFilter}/>
                            
             </div> 
           

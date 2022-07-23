@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 
 import { useTranslation } from 'react-i18next'
 
-import { getBitRegisterLink, getBitSearchForRegLink, getAccountMarketLink } from '../../utils/helper';
-import { getAccountStatusString, AccountStatusColors } from '../../constants/constants';
+import { getBitRegisterLink, getBitSearchForRegLink, getAccountMarketLink, numberFormatter } from '../../utils/helper';
+import { getAccountStatusString, AccountStatusColors, DASACCOUNTSTATUS } from '../../constants/constants';
 
 /**
  * 外部传进来所有的数据（有不同的状态），以及筛选的条件，组件内部进行筛选，得到一个结果集，在这个结果集里做分页显示
@@ -17,7 +17,7 @@ const BitRegisterSearchResultList = (props) => {
         filter: props.filter,           // 过滤器
         pageCount: 0,       // 页数
         pageLimit: 20,      // 每页条数
-        loading: false,      // 是否正在加载
+        loading: props.loading,      // 是否正在加载
     }
 
     const initDataShow = {
@@ -35,11 +35,12 @@ const BitRegisterSearchResultList = (props) => {
     useEffect(() => {
         let curData = data;
         curData.accountList = filterDataFromProps(props);
-        curData.loading = false;
+        curData.loading = props.loading;
         let page = Math.floor(curData.accountList.length / Number(20))
         curData.pageCount = curData.accountList.length % Number(20) === 0 ? page : page + 1
 
         setData(curData);
+        //console.log(curData);
         if (dataShow.pageIndex > curData.pageCount) {
             gotoPage(1);
         }
@@ -56,7 +57,7 @@ const BitRegisterSearchResultList = (props) => {
             dstData = props.dataList;
         }
         else {
-            dstData = props.dataList.filter(item => item.status[0] == props.filter.status);
+            dstData = props.dataList.filter(item => item.status == props.filter.status);
         }
 
         return dstData;
@@ -83,15 +84,23 @@ const BitRegisterSearchResultList = (props) => {
     }
 
     const renderStatusLink = (detail) => {
-        if (detail.status[0] === '0') {
-            return <div className={`flex flex-col pt-3.5 pr-2 content-center text-center items-center`}>
-            <a className='group pt-1 h-[28px] px-3 bg-[#00DF9B] ml-2 rounded-full text-center text-[#fff] text-[14px] group-hover:text-black group-hover:bg-[#aabb00] font-semibold' href={getBitRegisterLink(detail.name)} rel="noopener noreferrer" target='_blank'>
+        if (detail.status == DASACCOUNTSTATUS.Available) {
+            return <div className={`flex flex-col pt-3.5 content-center text-center items-center`}>
+            <a className='group pt-1 h-[28px] px-3 bg-[#00DF9B] ml-2 rounded-full text-center text-[#fff] text-[14px] group-hover:text-black group-hover:bg-[#aabb00] font-semibold' href={getBitRegisterLink(detail.account)} rel="noopener noreferrer" target='_blank'>
                 {t('search.register')}
-            </a>         
+            </a>
         </div>
         }
-        else if(detail.status[0] === '2' || detail.status[0] === '4' || detail.status[0] === '6') {
-            return <div className={`flex flex-col pt-3.5 pr-2 content-center text-center items-center`}>
+        else if (detail.status == DASACCOUNTSTATUS.OnSale) {
+            // todo
+            return <a className={`flex flex-row my-3.5  pr-3 content-center text-center items-center text-sm bg-[#FFA800] h-[28px] rounded-full text-white font-semibold`} href={getAccountMarketLink(detail.listing_for_sale[0].from, detail.account)} rel="noopener noreferrer" target="_blank">
+            <img src={`images/marketplaces/${detail.listing_for_sale[0].from.toLowerCase()}-color.svg`} alt={`logo-${detail.listing_for_sale[0].from}`} className='group h-[16px] pl-1  mx-2 rounded-full text-center ' >
+            </img>
+            {t("search.buy")}
+        </a>
+        }
+        else if(detail.status == DASACCOUNTSTATUS.Registered || detail.status == detail.status == DASACCOUNTSTATUS.Registering) {
+            return <div className={`flex flex-col pt-3.5 content-center text-center items-center`}>
             <a className="group pt-1 h-[28px] px-3 bg-[#2471FE] ml-2 rounded-full text-center text-[#fff] text-[14px] group-hover:text-black group-hover:bg-[#aabb00] font-semibold" href={getAccountMarketLink('didtop', detail.name)} rel="noopener noreferrer" target="_blank">
                 {t("accountlist.make-offer")}
             </a>      
@@ -101,6 +110,19 @@ const BitRegisterSearchResultList = (props) => {
             return <></>
         }
     } 
+
+    const renderMarketInfo = (item) => {
+        if(item.status == 2) {
+            if (item.listing_for_sale && item.listing_for_sale[0]) {
+                let value = numberFormatter(item.listing_for_sale[0].price, 2);
+
+                return <span className={`px-3 mt-2.5 pt-[1.5px] rounded-full h-[20px] text-[12px] ml-2 whitespace-nowrap text-[#fff] bg-[#00E09C]`} >{value} {item.listing_for_sale[0].symbol}</span>
+            }
+        }
+       
+        return <></>
+    }
+
     const renderStatusTag = (status) => {
 
         /*
@@ -113,26 +135,26 @@ const BitRegisterSearchResultList = (props) => {
         '6':'#FFD717',      // 注册中
         */
         // 由于 taiwandcss 对变量颜色支持有bug，所以单独写
-        if (status[0] === '0') {
-            return <span className={`px-3 mt-2.5 pt-[1.5px] rounded-full h-[20px] text-[12px] ml-2 whitespace-nowrap text-[#fff] bg-[#2471FE]`} >{getAccountStatusString(status[0])}</span>
+        if (status == 0) {
+            return <span className={`px-3 mt-2.5 pt-[1.5px] rounded-full h-[20px] text-[12px] ml-2 whitespace-nowrap text-[#fff] bg-[#2471FE]`} >{getAccountStatusString(status)}</span>
         }
-        else if (status[0] ==='1') {
+        else if (status ==1) {
             return <></>
         }
-        else if(status[0] === '2') {
-            return <span className={`px-3 mt-2.5 pt-[1.5px] rounded-full h-[20px] text-[12px] ml-2 whitespace-nowrap text-[#fff] bg-[#00E09C]`} >{getAccountStatusString(status[0])}</span>
+        else if(status == 2) {
+            return <span className={`px-3 mt-2.5 pt-[1.5px] rounded-full h-[20px] text-[12px] ml-2 whitespace-nowrap text-[#fff] bg-[#00E09C]`} >{getAccountStatusString(status)}</span>
         }
-        else if(status[0] === '3') {
-            return <span className={`px-3 mt-2.5 pt-[1.5px] rounded-full h-[20px] text-[12px] ml-2 whitespace-nowrap text-[#fff] bg-[#DF4A46]`} >{getAccountStatusString(status[0])}</span>
+        else if(status == 3) {
+            return <span className={`px-3 mt-2.5 pt-[1.5px] rounded-full h-[20px] text-[12px] ml-2 whitespace-nowrap text-[#fff] bg-[#DF4A46]`} >{getAccountStatusString(status)}</span>
         }
-        else if(status[0] === '4') {
-            return <span className={`px-3 mt-2.5 pt-[1.5px] rounded-full h-[20px] text-[12px] ml-2 whitespace-nowrap text-[#fff] bg-[#FFA800]`} >{getAccountStatusString(status[0])}</span>
+        else if(status == 4) {
+            return <span className={`px-3 mt-2.5 pt-[1.5px] rounded-full h-[20px] text-[12px] ml-2 whitespace-nowrap text-[#fff] bg-[#FFA800]`} >{getAccountStatusString(status)}</span>
         }
-        else if(status[0] === '5') {
-            return <span className={`px-3 mt-2.5 pt-[1.5px] rounded-full h-[20px] text-[12px] ml-2 whitespace-nowrap text-[#fff] bg-[#808191]`} >{getAccountStatusString(status[0])}</span>
+        else if(status == 5) {
+            return <span className={`px-3 mt-2.5 pt-[1.5px] rounded-full h-[20px] text-[12px] ml-2 whitespace-nowrap text-[#fff] bg-[#808191]`} >{getAccountStatusString(status)}</span>
         }
-        else if(status[0] === '6') {
-            return <span className={`px-3 mt-2.5 pt-[1.5px] rounded-full h-[20px] text-[12px] ml-2 whitespace-nowrap text-[#fff] bg-[#FFD717]`} >{getAccountStatusString(status[0])}</span>
+        else if(status == 6) {
+            return <span className={`px-3 mt-2.5 pt-[1.5px] rounded-full h-[20px] text-[12px] ml-2 whitespace-nowrap text-[#fff] bg-[#FFD717]`} >{getAccountStatusString(status)}</span>
         }
         else {
             return <></>
@@ -143,19 +165,34 @@ const BitRegisterSearchResultList = (props) => {
         let item = props.detail;
         
         if (props.loading) {
-            return (<></>)
+            return (<div key={props.key} className={`flex flex-row animate-pulse border-b-[1px] border-line  seperator`}>
+            <div className='py-2 md:px-2 flex grow content-center grow'>
+                <span className='w-6 h-6 mt-2 rounded-full bg-slate-500' ></span>
+                <span className="my-2 ml-2 w-3/12 h-6 rounded-full bg-slate-500"></span>
+                <div className='flex flex-col  w-5/12 md:flex-row'>
+                    <span className={`px-3 mt-2.5 pt-[1.5px] w-full rounded-full h-[20px] ml-2 bg-slate-500`} ></span>
+                </div>
+            </div>     
+            <div className={`flex flex-col pt-3.5 w-3/12 content-center text-center items-center`}>
+                <div className="group pt-1 h-[28px] px-3 w-full bg-slate-500 ml-2 rounded-full">       
+                </div>      
+            </div>
+        </div>)
         }
 
-        let statusTagColor = AccountStatusColors[item.status[0]];
+        //let statusTagColor = AccountStatusColors[item.status];
         
         return (
             <div key={`${item.name}`} className={`flex flex-row common-bitlist border-b-[1px] border-line seperator`}>
                 <div className='py-2 md:px-2 flex grow content-center grow'>
-                    <img className='w-6 h-6 mt-2 rounded-full' src={`https://identicons.did.id/identicon/${item.name}`} alt={`bitAvatar-${item.name}`} ></img>
+                    <img className='w-6 h-6 mt-2 rounded-full' src={`https://identicons.did.id/identicon/${item.account}`} alt={`bitAvatar-${item.account}`} ></img>
                     <span className="py-2 ml-2 text-base font-bold">
-                        {item.name}
+                        {item.account}
                     </span>
-                    {renderStatusTag(item.status)}
+                    <div className='flex flex-col md:flex-row'>
+                        {renderStatusTag(item.status)}
+                        {renderMarketInfo(item)}
+                    </div>
                 </div>     
                 {renderStatusLink(item)}
             </div>
@@ -166,7 +203,7 @@ const BitRegisterSearchResultList = (props) => {
         if (dataShow.accountList) {
             return (
                 dataShow.accountList.map((item,i) => {
-                    return <BitSearchResultItem key={item.name} detail={item}/>
+                    return <BitSearchResultItem key={item.name} detail={item} loading={props.loading}/>
                 })
             )
         }
@@ -177,16 +214,20 @@ const BitRegisterSearchResultList = (props) => {
         }
     }
 
+
     const renderLoadingCards = () => {
+
+        let skeletonRows = Array(20).fill(0);
+
         return (<div className='flex flex-col gap-4'>
-                    {renderPagination()}
-                    <div className='mt-2 grid gap-4 grid-cols-1 md:grid-cols-2 justify-center'>
-                        <div className={`flex flex-row animate-pulse gap-2 my-3`}>
-                            <div className="h-6 mr-2 w-10/12 py-2 rounded-full bg-slate-200"/>                         
-                            <div className="h-6 w-2/12 rounded-full bg-slate-200 "></div>
-                        </div>
-                    </div>
-                </div>
+        <div className='gap-x-4 grid grid-cols-1 md:grid-cols-2 justify-center my-4'>
+        {
+            skeletonRows?.map((item,i) => {
+                    return <BitSearchResultItem key={i} loading={true}/>
+                })
+        }
+        </div>
+    </div>
         )
     }
 
@@ -199,10 +240,10 @@ const BitRegisterSearchResultList = (props) => {
                 <div className="flex flex-row h-[14px] pl-2.5">
                     <img className="h-[14px]" src={'images/seekdid/logo_1_5@10x.svg'}/>
                 </div> 
-                <div className="w-full h-[160px] flex flex-col gap-2 justify-center align-items-center bg-slate-200 text-[#fff] rounded-[10px]">
+                <div className="w-full h-[160px] flex flex-col gap-2 justify-center align-items-center bg-slate-500 text-[#fff] rounded-[10px]">
                     
                     <div className="flex place-content-center">
-                        <div className="flex flex-col text-[20px] font-bold bg-slate-200 w-[60px] text-center rounded-[22.5px]">
+                        <div className="flex flex-col text-[20px] font-bold bg-slate-500 w-[60px] text-center rounded-[22.5px]">
                         
                         </div>
                     </div>
@@ -216,7 +257,7 @@ const BitRegisterSearchResultList = (props) => {
                 </div> 
                 <div className='flex flex-row h-6 justify-center'>
                     <span className='text-sm  whitespace-nowrap' ></span>
-                    <div className="group h-[24px] w-[72px] bg-slate-200 ml-2 rounded-full pt-1 text-center  text-[12px]  font-semibold">
+                    <div className="group h-[24px] w-[72px] bg-slate-500 ml-2 rounded-full pt-1 text-center  text-[12px]  font-semibold">
                         
                     </div> 
                 </div>
@@ -247,7 +288,6 @@ const BitRegisterSearchResultList = (props) => {
         </div>
     }
 
-    let skeletonRows = Array(20).fill(0);
 
     data.accountList = filterDataFromProps(props);
 

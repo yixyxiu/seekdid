@@ -114,10 +114,10 @@ const BitOwnerAccountList = (props) => {
                 <div className="flex flex-row h-[14px] pl-2.5">
                     <img className="h-[14px]" src={'images/seekdid/logo_1_5@10x.svg'}/>
                 </div> 
-                <div className="w-full h-[160px] flex flex-col gap-2 justify-center align-items-center bg-slate-200 text-[#fff] rounded-[10px]">
+                <div className="w-full h-[160px] flex flex-col gap-2 justify-center align-items-center bg-slate-500 text-[#fff] rounded-[10px]">
                     
                     <div className="flex place-content-center">
-                        <div className="flex flex-col text-[20px] font-bold bg-slate-200 w-[60px] text-center rounded-[22.5px]">
+                        <div className="flex flex-col text-[20px] font-bold bg-slate-500 w-[60px] text-center rounded-[22.5px]">
                         
                         </div>
                     </div>
@@ -131,7 +131,7 @@ const BitOwnerAccountList = (props) => {
                 </div> 
                 <div className='flex flex-row h-6 justify-center'>
                     <span className='text-sm  whitespace-nowrap' ></span>
-                    <div className="group h-[24px] w-[72px] bg-slate-200 ml-2 rounded-full pt-1 text-center  text-[12px]  font-semibold">
+                    <div className="group h-[24px] w-[72px] bg-slate-500 ml-2 rounded-full pt-1 text-center  text-[12px]  font-semibold">
                         
                     </div> 
                 </div>

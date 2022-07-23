@@ -60,13 +60,14 @@ const SeekTextArea = forwardRef((props, ref) => {
         })
     }
 
+    let countColor = searchData.wordCount > 1000 ? 'bg-[#F56100]' : 'bg-[#00DF9B]';
     return (
         <div className="relative">
             <TextArea value={searchData.text} className='w-full' type="text" placeholder={t('search.search-edit-placeholder')} onChange={OnEditChanged}/>
             <button onClick={clearEdit} className={`absolute right-2 top-2  ${searchData.text.length > 0 ? 'block' : 'hidden'}`}>
                 <i className='bx bx-x bg-[#F56100] rounded-full'></i>
             </button>
-            <div className={`absolute right-2 bottom-2 bg-[#00DF9B] rounded-full px-3 text-[#fff] ${searchData.wordCount > 0 ? 'block' : 'hidden'}`}>{searchData.wordCount}</div>
+            <div className={`absolute right-2 bottom-2 ${countColor} rounded-full px-3 text-[#fff] ${searchData.wordCount > 0 ? 'block' : 'hidden'}`}>{searchData.wordCount}</div>
 
         </div>
     )

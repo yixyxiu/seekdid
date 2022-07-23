@@ -4,7 +4,7 @@ import {DASACCOUNTSTATUS, DASOPENEPOCH} from '../constants/constants';
 
 
 let blake2b = require('blake2b');
-export const das = require('../constants/data/registered.json');
+export const das = {};//require('../constants/data/registered.json');
 das.suffixList = require('../constants/data/suffix.json');
 das.prefixList = require('../constants/data/prefix.json');
 das.reserved = require('../constants/data/reserved.json');

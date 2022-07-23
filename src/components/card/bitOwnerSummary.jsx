@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { useTranslation } from 'react-i18next';
+//import BitAccountShareCard from '../modal/bitAccountShareCard';
+//import BitShareCard from '../modal/bitShareCard';
 
 //import './bitSimpleCard.css'
 
@@ -95,8 +97,8 @@ const BitOwnerSummary = (props) => {
         //console.log(data);
         if (data.loading) {
             return  <div key={index} className={`flex flex-col animate-pulse `}>
-                        <div className="h-6  w-1/2 rounded-full bg-slate-200"/>                         
-                        <div className="h-6 w-1/2 rounded-full bg-slate-200 "></div>
+                        <div className="h-6  w-1/2 rounded-full bg-slate-500"/>                         
+                        <div className="h-6 w-1/2 rounded-full bg-slate-500 "></div>
                     </div>
         }
         else if(hasError) {
@@ -169,7 +171,7 @@ const BitOwnerSummary = (props) => {
     return (<div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:p-5 ">
     <div className="flex py-8 gap-4 flex-col rounded-[10px] bg-[#00DF9B] border-[5px] border-[#CFFFF0] w-full md:w-full h-[200px] items-center">
         {renderAccountName()}
-        <div className="mb-7 justify-center items-center flex text-[35px] w-24 font-bold rounded-full bg-[#00B981] text-[#000000]/60 golden-text-shadow" >.bit</div>
+        <div className="mb-7 justify-center items-center flex text-[35px] w-24 font-bold rounded-full bg-[#00B981] text-[#000000]/60 golden-text-shadow" >.bit</div>        
     </div>
     <div className="grow owner-summary-grid-bg rounded-[10px] grid grid-cols-2 px-4 py-3.5 w-full md:grid-cols-4 lg:grid-cols-5 auto-cols-max justify-center align-items-center">
         

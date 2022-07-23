@@ -17,7 +17,7 @@
     transition: 0.6s;
     visibility: 1;
     opacity: 1;
-    z-index: 1000;
+    z-index: 2;
 }
 /*
 .sidebar::after {

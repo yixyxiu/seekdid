@@ -141,10 +141,11 @@
       "filter-registering":"Rigistering",
       "top-categories":"TOP CATEGORIES: ",
       "10k-club":"10K Club",
-      "0x99-club":"0x99 Club",
-      "0x999-club":"0x999 Club",
+      "0x99-club":"2 HEX Club",
+      "0x999-club":"3 HEX Club",
       "date-club":"📅DATE Club",
-      "time-club":"⏰TIME Club"
+      "time-club":"⏰TIME Club",
+      "buy":"BUY"
     }
   }
 }

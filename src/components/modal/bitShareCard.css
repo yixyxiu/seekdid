@@ -1,0 +1,13 @@
+.bit-share-card-top-bg {
+    background-image: url('../../assets/images/share-topbg.png');
+    background-repeat:no-repeat; 
+    background-size:100% 100%;
+    -moz-background-size:100% 100%;
+}
+
+.bit-share-card-bottome-bg {
+    background-image: url('../../assets/images/share-bottombg.png');
+    background-repeat:no-repeat; 
+    background-size:100% 100%;
+    -moz-background-size:100% 100%;
+}
