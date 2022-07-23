@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 
 import TextArea from 'antd/lib/input/TextArea';
 import { CSVLink } from "react-csv";
@@ -125,6 +125,10 @@ const SeekTool = () => {
         }
     ]*/
 
+    useEffect(() => {
+        
+    }, []);
+
     const onSearch = () => {
         let wordList = searchEditRef.current.getWordList();
         
@@ -246,6 +250,8 @@ const SeekTool = () => {
         }, 10) 
     }
 
+    document.title = t('page-title.search');
+    
     return (
         <div className='bg-main-card h-full rounded-[10px]'>
         <div className='w-full p-3 md:p-6 flex flex-col'>

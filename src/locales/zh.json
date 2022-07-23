@@ -46,6 +46,11 @@
       "clubs":"圈子",
       "explore":"逛一逛"
     },
+    "page-title": {
+      "search":"找一个靓号进入 web3 的世界",
+      "dashboard":"DID 24小时数据监测",
+      "explore":"与你的社区分享你的 .bit 账号排名"
+    },
     "dashboard": {
       "sold-summary-card-title":"24小时成交数据",
       "summary-count-card-title":"成交量",

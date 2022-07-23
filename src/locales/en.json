@@ -47,6 +47,11 @@
       "explore":"Explore"
 
     },
+    "page-title": {
+      "search":"Seek a better DID for your web3 life",
+      "dashboard":"DID dashboard",
+      "explore":"Share your .bit with your community"
+    },
     "dashboard": {
       "sold-summary-card-title":"SALES SUMMARY OF LAST 24 HRS",
       "summary-count-card-title":"ACCOUNTS SOLD",

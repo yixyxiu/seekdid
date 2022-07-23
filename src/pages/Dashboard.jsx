@@ -2,6 +2,8 @@ import React, {useEffect} from 'react'
 
 import { useSelector } from 'react-redux'
 
+import { useTranslation } from 'react-i18next'
+
 import BitBornList from '../components/list/bitBornList'
 import BitMintList from '../components/list/bitMintList'
 import BitSoldList from '../components/list/bitSoldList'
@@ -16,7 +18,14 @@ import DailyOwnerChart from '../components/charts/DailyOwnerChart'
 const Dashboard = () => {
 
     //const themeReducer = useSelector(state => state.ThemeReducer.mode)
+    const [t] = useTranslation()
 
+    useEffect(() => {
+        
+    }, []);
+
+    document.title = t('page-title.dashboard');
+    
     return (
         <div>
             <div className="grid gap-4 md:flex md:flex-row">

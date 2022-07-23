@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 import { useEffect} from 'react';
 
-//import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 
 import BitOwnerSummary from '../components/card/bitOwnerSummary';
 import BitOwnerAccountList from '../components/list/bitOwnerAccountList';
@@ -13,7 +13,7 @@ import ExploreAccountInput from '../components/input/exploreAccountInput';
 
 const Detail = () => {
 
-    //const [t] = useTranslation()
+    const [t] = useTranslation()
     
     const { name } = useParams();
 
@@ -27,9 +27,11 @@ const Detail = () => {
             top: 0,
             behavior: "smooth"
         });
-
+        
     }, [name]);
     
+    document.title = t('page-title.explore');
+
     return (
         <div className='flex flex-col p-5 bg-main-card bg-box-shadow rounded-[10px]'>
             <ExploreAccountInput/>
